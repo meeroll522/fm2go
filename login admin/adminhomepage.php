@@ -127,7 +127,7 @@ body {
   <a href="http://localhost/masterfolder_fm2go/stockmenu.html">Stock Menu</a>
   <a href="http://localhost/masterfolder_fm2go/loginadmin.php">FM2GO Homepage</a>
   <a href="#">Admin Description</a>
-  <a href="http://localhost/masterfolder_fm2go/loginadmin.php" class="right">log out</a>
+  <a href="http://localhost/masterfolder_fm2go/loginadmin" class="right">log out</a>
 </div>
 
 <div class="row">
