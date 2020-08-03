@@ -136,14 +136,12 @@ body {
 <div class="row">
   <div class="side">
     <h2>THIS IS US, THE GREAT TEAM</h2>
-  <img src="anisah.jpg" class="center" style="height:400px;"/>
- <img src="adriana.jpg" class="center" style="height:400px;"/>
- <img src="muqhlis.jpg" class="center" style="height:400px;"/>
-  <img src="hani.jpg" class="center" style="height:400px;"/>
-   <img src="fad.jpg" class="center" style="height:400px;"/>
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+<marquee scrollamount="20"
+direction="left"
+behavior="scroll">
+<img src="anisah.jpg" alt="Anisah" width="400" height="550""><img src="adriana.jpg" alt="Anisah" width="400" height="550""><img src="muqhlis.jpg" alt="Anisah" width="400" height="550""><img src="fad.jpg" alt="Anisah" width="500" height="550""><img src="hani.jpg" alt="Anisah" width="400" height="550"">
+</marquee>
+
 
 </body>
 </html>
