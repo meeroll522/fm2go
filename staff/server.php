@@ -8,13 +8,14 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost', 'web38', 'web38', 'G05-38-STS');
+	$db = mysqli_connect("localhost", "fm2go", "fm2go", "fm2go");
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
 		// receive all input values from the form
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
+		$name = mysqli_real_escape_string($db, $_POST['name']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 
@@ -29,14 +30,14 @@
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
-			$password = md5($password_1);//encrypt the password before saving in the database
-			$query = "INSERT INTO users (username, email, password) 
-					  VALUES('$username', '$email', '$password')";
+			$password = ($password_1);//encrypt the password before saving in the database
+			$query = "INSERT INTO customers (`username`, `name`, `email`, `password`, `usertype`) 
+					  VALUES('$username', '$name', '$email', '$password', 'customer')";
 			mysqli_query($db, $query);
 
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
-			header('location: index11.php');
+			header('location: /login.php');
 		}
 
 	}
@@ -56,18 +57,41 @@
 		}
 
 		if (count($errors) == 0) {
-			$password = md5($password);
-			$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+			//admin login
+			$query = "SELECT * FROM `loginadmin` WHERE username = '" .$_POST['username']. "' and password = '" .$_POST['password']. "'";
 			$results = mysqli_query($db, $query);
-
-			if (mysqli_num_rows($results) == 1) {
+			$count =  mysqli_num_rows($results);
+			$row = mysqli_fetch_assoc($results);
+			if ($count == 1) {
 				$_SESSION['username'] = $username;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: index11.php');
-			}else {
+				header('location: ../admin%20homepage.php');
+			}
+			//customer login
+			$query = "SELECT * FROM `logincustomer` WHERE username = '" .$_POST['username']. "' and password = '" .$_POST['password']. "'";
+			$results = mysqli_query($db, $query);
+			$count =  mysqli_num_rows($results);
+			$row = mysqli_fetch_assoc($results);
+			if ($count == 1) {
+				$_SESSION['username'] = $username;
+				$_SESSION['success'] = "You are now logged in";
+				header('location: /admin%20homepage.php');
+			}
+			//staff login
+			$query = "SELECT * FROM `loginstaff` WHERE username = '" .$_POST['username']. "' and password = '" .$_POST['password']. "'";
+			$results = mysqli_query($db, $query);
+			$count =  mysqli_num_rows($results);
+			$row = mysqli_fetch_assoc($results);
+			if ($count == 1) {
+				$_SESSION['username'] = $username;
+				$_SESSION['success'] = "You are now logged in";
+				header('location: StaffHOME.php');
+			}
+			else {
 				array_push($errors, "Wrong username/password combination");
 			}
 		}
+		
 	}
 
 ?>
