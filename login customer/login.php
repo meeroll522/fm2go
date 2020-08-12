@@ -51,7 +51,7 @@ img {
 		<?php include('errors.php'); ?>
 
 		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-			<input class="input100" type="text" name="username" placeholder="Enter your username">
+			<input class="input100" type="text" name="name" placeholder="Enter your username">
 		<span class="focus-input100"></span>
 			</div>
 		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter password">
@@ -61,14 +61,17 @@ img {
 						<a href="#" class="txt1">
 							Forgot password
 						</span> <br>
+				<div class="text-center p-t-13 p-b-23">
+						<a href="http://localhost/masterfolder_fm2go/signupnew%20customer/login.php" class="txt1">
+							New to FM2GO? Sign Up Here !
+						</span> <br>
 		
 		<br><div class="input-group"><div class="container-login100-form-btn">
-			<br><button type="submit" class="login100-form-btn" name="login_user">Login</button><br>
-		</div>
-
+			<br><button type="submit" class="login100-form-btn" name="login_user">Login</button><br><br>
+			
+		</div> <br><br>
+		
 	</form>
-	
-
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -86,6 +89,5 @@ img {
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
-
 </body>
 </html>

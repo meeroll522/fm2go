@@ -93,48 +93,48 @@
 	  <img src="menu/menu pic/b1.png" alt="Anisah" width="290" height="250">
     </div>
 	<div class="col-sm-4"> 
-      <p><b>Coffee</b></p> <br>
+      <p><a href="http://localhost/masterfolder_fm2go/coffee.php">Coffee</a></p> <br>
 	  <img src="menu/menu pic/c1.png" alt="Anisah" width="290" height="250">
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
-     <br> <p><b>Oden</b></p> <br>
+     <br><p><a href="http://localhost/masterfolder_fm2go/Oden.php">Oden</a></p><br>
 	  <img src="menu/menu pic/o1.png" alt="Anisah" width="290" height="250">
 
     </div>
     <div class="col-sm-4"> 
-     <br> <p><b>Onigiri</b></p> <br>
+          <br><p><a href="http://localhost/masterfolder_fm2go/onigiri.php">Onigiri</a></p><br>
 	  <img src="menu/menu pic/onigiri.png" alt="Anisah" width="290" height="250">
 	  
     </div>
 	<div class="col-sm-4"> 
-     <br> <p><b>Hot Snacks</b></p> <br>
+      <br><p><a href="http://localhost/masterfolder_fm2go/hotsnacks.php">Hot Snacks</a></p><br>
 	  <img src="menu/menu pic/hot1.png" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Steamed Snacks</b></p> <br>
+      <br><p><a href="http://localhost/masterfolder_fm2go/steamedsnacks.php">Steamed Snacks</a></p><br>
 	  <img src="menu/menu pic/stem1.png" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Salads</b></p> <br>
+      <br><p><a href="http://localhost/masterfolder_fm2go/salad.php">Salad</a></p><br>
 	  <img src="menu/menu pic/salad.png" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Bento Boxes</b></p> <br>
+      <br><p><a href="http://localhost/masterfolder_fm2go/bento.php">Bento Boxes</a></p><br>
 	  <img src="menu/menu pic/bento.png" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Soft Serve Ice Cream</b></p> <br>
+      <br><p><a href="http://localhost/masterfolder_fm2go/icecream.php">Soft Serve Ice Cream</a></p><br>
 	  <img src="menu/menu pic/ice1.png" alt="Anisah" width="290" height="210">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Desserts</b></p> <br>
+      <br><p><a href="http://localhost/masterfolder_fm2go/desserts.php">Desserts</a></p><br>
 	  <img src="menu/menu pic/dessert.png" alt="Anisah" width="290" height="210">
 
       </div>

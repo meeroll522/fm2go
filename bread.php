@@ -79,49 +79,55 @@
 
 <!-- First Container (Grid) -->
 <div class="container-fluid bg-3 text-center">    
- <img class="w3-round" src="menu pic/breadh.png" alt="Anisah" width="1050" height="350""> </a>	<br><br>
+ <img class="w3-round" src="menu/menu pic/boarder.jpg" alt="Anisah" width="1050" height="350""> </a>	<br><br>
 
   <div class="row">
     <div class="col-sm-4">
-      <p><b>Teriyaki Chicken</b></p> <br>
-	  <img src="menu pic/teriyaki.png" alt="Anisah" width="290" height="250"> 
+      <p><b>Matcha Roll Cake</b></p> <br>
+	  <img src="menu/menu pic/macha.jpg" alt="123" width="290" height="250"> 
 
     </div>
     <div class="col-sm-4"> 
-      <p><b>Chicken katsu</b></p> <br>
-	  <img src="menu pic/katsu.png" alt="Anisah" width="290" height="250">
+      <p><b>Honey Roll Cake</b></p> <br>
+	  <img src="menu/menu pic/honey.jpg" alt="Anisah" width="290" height="250">
     </div>
 	<div class="col-sm-4"> 
-      <p><b>Crab meat</b></p> <br>
-	  <img src="menu pic/crab.png" alt="Anisah" width="290" height="250">
+      <p><b>Brownie</b></p> <br>
+	  <img src="menu/menu pic/brownie.jpg" alt="Anisah" width="290" height="250">
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
-     <br> <p><b>Egg</b></p> <br>
-	  <img src="menu pic/egg.png" alt="Anisah" width="290" height="250">
+     <br> <p><b>Cheesy Stick</b></p> <br>
+	  <img src="menu/menu pic/stick.jpg" alt="Anisah" width="290" height="250">
 
     </div>
     <div class="col-sm-4"> 
-     <br> <p><b>Ham</b></p> <br>
-	  <img src="menu pic/ham.png" alt="Anisah" width="290" height="250">
+     <br> <p><b>Parmesan Garlic Bun</b></p> <br>
+	  <img src="menu/menu pic/garlic.jpg" alt="Anisah" width="290" height="250">
 	  
     </div>
 	<div class="col-sm-4"> 
-     <br> <p><b>Tuna Mayo</b></p> <br>
-	  <img src="menu pic/tuna.png" alt="Anisah" width="290" height="250">
+     <br> <p><b>Parmesan Chicken Slice</b></p> <br>
+	  <img src="menu/menu pic/chicken.jpg" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Chicken Mayo</b></p> <br>
-	  <img src="menu pic/chickenmayo.png" alt="Anisah" width="290" height="250">
+     <br> <p><b>Peanut Roll</b></p> <br>
+	  <img src="menu/menu pic/peanut.jpg" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Sardine Mayo</b></p> <br>
-	  <img src="menu pic/sardine.png" alt="Anisah" width="290" height="250">
+     <br> <p><b>Choclate Bun</b></p> <br>
+	  <img src="menu/menu pic/choclate.jpg" alt="Anisah" width="290" height="250">
 
       </div>
+	  	  <div class="col-sm-4"> 
+     <br> <p><b>Mexican Bun</b></p> <br>
+	  <img src="menu/menu pic/mexican.jpg" alt="Anisah" width="290" height="250">
+
+      </div>
+	  
 	  
 	</div>
 </div>
