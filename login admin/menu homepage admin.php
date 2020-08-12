@@ -60,7 +60,7 @@ img {
   <p class="w3-xxlarge" align ="center">Welcome to Menu Homepage! Choose one button to pick what you want to do today</p><br>
 
 </div>
-<button class="button button1" onclick="window.location.href='http://localhost/masterfolder_fm2go/stockmenu.html';">Create Menu</button>
+<button class="button button1" onclick="window.location.href='http://localhost/masterfolder_fm2go/stockmenu.html';">Creat Menu</button>
 
 
 			<br><br><a href="http://localhost/masterfolder_fm2go/admin%20homepage.php" class="txt2">

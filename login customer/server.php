@@ -57,26 +57,19 @@
 		}
 
 		if (count($errors) == 0) {
-			//admin login
-			$query = "SELECT * FROM `signupcustomer` WHERE name = '" .$_POST['name']. "' and password = '" .$_POST['password']. "'";
+			//login
+			$query = "SELECT * FROM `signupcustomer` WHERE name = '" .$_POST['name']. "' and password = '" .$_POST['password']. "' and usertype = 'customer'";
 			$results = mysqli_query($db, $query);
 			$count =  mysqli_num_rows($results);
 			$row = mysqli_fetch_assoc($results);
+			
 			if ($count == 1) {
 				$_SESSION['name'] = $username;
 				$_SESSION['success'] = "You are now logged in";
 				header('location: ../masterfolder_fm2go/homepage.html');
+
 			}
-			//customer login
-			$query = "SELECT * FROM `signupcustomer` WHERE name = '" .$_POST['name']. "' and password = '" .$_POST['password']. "'";
-			$results = mysqli_query($db, $query);
-			$count =  mysqli_num_rows($results);
-			$row = mysqli_fetch_assoc($results);
-			if ($count == 1) {
-				$_SESSION['name'] = $name;
-				$_SESSION['success'] = "You are now logged in";
-				header('location: /masterfolder_fm2go/homepage.html');
-			}
+
 			else {
 				array_push($errors, "Wrong username/password combination");
 			}

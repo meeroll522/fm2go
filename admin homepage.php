@@ -127,9 +127,8 @@ body {
 </div>
 
 <div class="navbar">
-  <a href="http://localhost/masterfolder_fm2go/stockmenu.html">MENU</a>
-  <a href="http://localhost/masterfolder_fm2go/contact.html">FM2GO HOMEPAGE</a>
-  <a href="#">Admin Description</a>
+  <a href="http://localhost/masterfolder_fm2go/menu%20homepage%20admin.php">Menu</a>
+  <a href="http://localhost/masterfolder_fm2go/homepage.html">Homepage</a>
   <a href="http://localhost/masterfolder_fm2go/login%20admin/login.php" class="right">log out</a>
 </div>
 

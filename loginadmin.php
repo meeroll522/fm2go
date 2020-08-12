@@ -1,9 +1,8 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V8</title>
+	<title>Login Admin Page</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -44,9 +43,8 @@ img {
 	<img src="fmICON.png" class="center"/>
 	<div class="w3-container w3-myfont">
   <p class="w3-xxlarge" align ="center">Welcome back Admin! Log in below to access system</p><br>
-
 </div>
-		<form method ="POST" action="#">
+		<form method ="POST" action="">
 			<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
 				<input class="input100" type="text" name="username" placeholder="Enter your username">	
 				<span class="focus-input100"></span>
@@ -55,7 +53,6 @@ img {
 				<input class="input100" type="password" name="password" placeholder="Enter your password"/>
 				<span class="focus-input100"></span>
 			</div>
-			
 			<div class="text-right p-t-13 p-b-23">
 						<span class="txt1">
 							Forgot
@@ -65,14 +62,10 @@ img {
 						</a>
 					</div>
 			<div class="container-login100-form-btn">
-			<input type="submit" type="submit" value="LOGIN" class="login100-form-btn"/>
+			<input type="submit" name="login" value="LOGIN" class="login100-form-btn"/>
 			</div>
-			
-			
 		</form>
 	</div>
-		
-	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

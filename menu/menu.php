@@ -102,6 +102,11 @@ img {
 	error_reporting(E_ALL);
 
 	$qry = getListOfMenu();
+	echo '<form action = "menu/processMenu.php" method ="POST">';
+	echo '<br><input type = "submit" name="addMenuButton" value ="Create New Menu" class="center-block" style="color:black">';
+	
+echo '</form>';
+echo '<br><br>';
 	echo '<div class="col-md-12">
 			<div class="card">
 			<div class="card-header">
@@ -115,9 +120,10 @@ img {
 					<th>Name</th>
 					<th>Type</th>
 					<th>Price</th>
+					<th>Quantity</th>
 				</thead>';
 	$i=1;
-	while($row=mysqli_fetch_assoc($qry))//Display car information
+	while($row=mysqli_fetch_assoc($qry))//Display menu information
 	{
 		echo '<tbody>';
 		echo '<tr>';
@@ -125,6 +131,8 @@ img {
 		echo '<td>'.$row['menuName'].'</td>';
 		echo '<td>'.$row['menuType'].'</td>';
 		echo '<td>'.$row['menuPrice'].'</td>';
+		echo '<td>'.$row['menuQuantity'].'</td>';
+
 		$i++;
 	}
 		echo'</tr>

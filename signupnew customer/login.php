@@ -11,42 +11,61 @@ if(isset($_POST['signup']))
 	$password=$_POST['password'];
 	$contact=$_POST['contact'];
 	$enc_password=$password;
+	
+	$hash = md5(rand(0, 1000));
 
-	$msg=mysqli_query($con,"insert into signupcustomer (`name`,`fname`,`lname`,`email`,`password`,`contact`) values('$name','$fname','$lname','$email','$enc_password','$contact')");
-if($msg)
-{
-	echo "<script>alert('Register successfully');</script>";
-}
+	$msg=mysqli_query($con,"insert into signupcustomer 
+	(`name`,`fname`,`lname`,`email`,`password`,`contact`,`usertype`) 
+	values ('$name','$fname','$lname','$email','$enc_password','$contact','$hash')");
+	
+		if($msg){
+			echo "<script>console.log('test')</script>";
+			$to = "$email";
+			$subject = ' SIGN UP | Verification E-mail';
+			$message = '
+	 
+			Thanks for signing up!
+			Your account has been created, you can login with the following credentials after you have activated your account by pressing the url below.
+			
+			http://localhost/masterfolder_fm2go/verification/verify.php?email=' . $_POST['email'] . '&hash=' . $hash . ' 
+			Please click this link to activate your account:
+			';
+			
+			$headers = 'From: fm2gogroup7@gmail.com';
+			
+			mail($to, $subject, $message, $headers);
+			header("location: ../homepage.html");
+			
+		}
+			
+		
 }
 
 // Code for login 
 if(isset($_POST['login']))
 {
-$password=$_POST['password'];
-$dec_password=$password;
-$useremail=$_POST['uemail'];
-$ret= mysqli_query($con,"SELECT * FROM `signupcustomer` WHERE email='$useremail' and password='$dec_password'");
-$num=mysqli_fetch_array($ret);
-if($num>0)
-{
-$extra="../paper-dashboard-master/examples/dashboard.html";
-$_SESSION['login']=$_POST['uemail'];
-$_SESSION['name']=$num['name'];
-$_SESSION['name']=$num['fname'];
-$host=$_SERVER['HTTP_HOST'];
-$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-header("location:http://$host$uri/$extra");
-exit();
-}
-else
-{
-echo "<script>alert('Invalid username or password');</script>";
-$extra="index.php";
-$host  = $_SERVER['HTTP_HOST'];
-$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-//header("location:http://$host$uri/$extra");
-exit();
-}
+	$password=$_POST['password'];
+	$dec_password=$password;
+	$useremail=$_POST['uemail'];
+	$ret= mysqli_query($con,"SELECT * FROM `signupcustomer` WHERE email='$useremail' and password='$dec_password' and usertype='customer'");
+	$num=mysqli_fetch_array($ret);
+		if($num>0){
+			$extra="../paper-dashboard-master/examples/dashboard.html";
+			$_SESSION['login']=$_POST['uemail'];
+			$_SESSION['name']=$num['name'];
+			$_SESSION['name']=$num['fname'];
+			$host=$_SERVER['HTTP_HOST'];
+			$uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+			header("location:http://$host$uri/$extra");
+			exit();
+		}else{
+			echo "<script>alert('Invalid username or password');</script>";
+			$extra="index.php";
+			$host  = $_SERVER['HTTP_HOST'];
+			$uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+			//header("location:http://$host$uri/$extra");
+			exit();
+		}
 }
 
 //Code for Forgot Password
@@ -209,7 +228,7 @@ img {
 		</div>
 		
 		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Email">
-			<input class="input100" type="text" name="password" placeholder="Enter your Email">
+			<input class="input100" type="text" name="email" placeholder="Enter your Email">
 		</div>
 		
 		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Password">
