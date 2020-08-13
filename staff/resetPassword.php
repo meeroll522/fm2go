@@ -1,7 +1,10 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
+
+<html>
 <head>
-	<title>FM2GO HOMEPAGE</title>
+	<title>Reset Password</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -34,44 +37,35 @@ img {
   font-family: "Comic Sans MS", cursive, sans-serif;
   
 }
-.button {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
- 
-}
-.button1 {background-color: #4CAF50;} 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-}
 </style>
 </head>
 <body>
+
 	<div class="container">
 	<img src="fmICON.png" class="center"/>
 	<div class="w3-container w3-myfont">
-  <p class="w3-xxlarge" align ="center">Welcome to FM2GO! who are you? choose one :) </p><br>
-</div>
-</div><div class="center">
-<button class="button button1"  onclick="window.location.href='http://localhost/masterfolder_fm2go/login%20admin/';">Admin</button>
-<button class="button button1"  onclick="window.location.href='http://localhost/masterfolder_fm2go/login%20customer/login.php';">Customer</button>
-<button class="button button1" onclick="window.location.href='http://localhost/masterfolder_fm2go/staff/login.php';">Staff</button>
-	</a><br><br>
-<p id="demo"></p>
-			
-			
+  <p class="w3-xxlarge" align ="center">Forget your password? please enter your new password</p><br>
+	
+	<form method="post" action="resetPasword.php">
 
-	</div>
+		<?php include('errors.php'); ?>
+
+		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your email">
+			<input class="input100" type="text" name="email" placeholder="Enter your email">
+		<span class="focus-input100"></span>
+			</div>
+		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your new password">
+			<input class="input100" type="password2" name="password2" placeholder="Enter your new password">
+		</div>
+				
 		
+		<div class="input-group"><div class="container-login100-form-btn">
+			<br><button type="submit" class="login100-form-btn" name="login_user">Reset password</button><br>
+		</div>
+
+	</form>
+	
+
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -92,3 +86,27 @@ img {
 
 </body>
 </html>
+<?php
+
+    if (isset($_POST['resetPassword'])) {
+    $to = $_POST['email'];
+    $subject = 'Fm2Go Notification | Forget Password';
+    $message = '
+ 
+        A request for password change has been activated.
+        You can change your password by visiting the link below.
+
+
+        Please click this link to reset your password:
+        http://localhost/masterfolder_fm2go/verifyPasswordStaff.php?email=' . $_POST['email'] . '&password=' . $_POST['password'] . '
+
+        ';
+
+    $headers = 'From: fm2gogroup7@gmail.com';
+    mail($to, $subject, $message, $headers);
+
+    echo "<meta http-equiv='refresh' content='0;url=login.php'>";
+
+    }
+
+?>

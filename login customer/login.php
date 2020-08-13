@@ -4,7 +4,7 @@
 
 <html>
 <head>
-	<title>Customer Login Page</title>
+	<title>Customer Login Page | FM2GO</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -58,7 +58,7 @@ img {
 			<input class="input100" type="password" name="password" placeholder="Enter your password">
 		</div>
 				<div class="text-center p-t-13 p-b-23">
-						<a href="#" class="txt1">
+						<a href="http://localhost/masterfolder_fm2go/login%20customer/resetPasswordCustomer.php" class="txt1">
 							Forgot password
 						</span> <br>
 				<div class="text-center p-t-13 p-b-23">

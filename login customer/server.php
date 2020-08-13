@@ -66,7 +66,7 @@
 			if ($count == 1) {
 				$_SESSION['name'] = $username;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: ../masterfolder_fm2go/homepage.html');
+				header('location: ../homepage.html');
 
 			}
 
