@@ -50,8 +50,8 @@ img {
 
 		<?php include('errors.php'); ?>
 
-		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-			<input class="input100" type="text" name="username" placeholder="Enter your username">
+		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter name">
+			<input class="input100" type="text" name="name" placeholder="Enter your name">
 		<span class="focus-input100"></span>
 			</div>
 		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter password">
@@ -61,7 +61,7 @@ img {
 						<span class="txt1">
 							Forgot
 						</span>
-				<a href="#" class="txt2">
+				<a href="http://localhost/masterfolder_fm2go/login admin/resetPassword.php" class="txt2">
 							 Password?
 						</a><br>
 		

@@ -15,12 +15,12 @@ if(!$con)
  $menuQuantity = $_POST['menuQuantity'];
  $menuPrice = $_POST['menuPrice'];
   
-  $sql="INSERT INTO `menu`(menuID, menuName,menuType,menuQuantity,menuPrice)
-	VALUES ('$menuID','$menuName','$menuType','$menuQuantity','$menuPrice')";
+  $sql="INSERT INTO `menu`(`menuID`, `menuName`, `menuType`, `menuQuantity`, `menuPrice`) VALUES 
+  (NULL,'$menuName','$menuType','$menuQuantity','$menuPrice')";
  
-//echo $sql;
+	echo $sql;
 	$qry = mysqli_query($con,$sql);
- mysqli_query($con,$sql);
+
 }
 
 //getListOfTicket function ==================
