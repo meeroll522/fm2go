@@ -235,13 +235,13 @@ iframe {
 
   position: relative;
   display: block;
-  width: 100%;
+  width: 50%;
   height: 55px;
   background: #ebebeb;
   border-radius: 27px;
   padding: 0 35px 0 35px;
 }
-
+.m-t-90 {margin-top: 90px;}
 
 /*------------------------------------------------------------------
 [ Focus Input ]*/
@@ -276,7 +276,8 @@ iframe {
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
-  width: 100%;
+  width: 50%;
+  margin: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

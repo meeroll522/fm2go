@@ -38,26 +38,27 @@ $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
 
-/*//delete function ==================
-function deleteCar()
+//delete function
+function deleteMenu()
 {
-$con = mysqli_connect("localhost","web2","web2","cardb");
+$con = mysqli_connect("localhost","fm2go","fm2go","fm2go");
 if(!$con)
 	{
 	echo mysqli_connect_error();
 	exit;
 	}
 
- $regNumber = $_POST['regNumberToDelete'];//get selected regNumber to delete
+ $menuName = $_POST['menuNameToDelete'];//get selected regNumber to delete
   
-  $sql="delete from car
-		where regNumber ='".$regNumber."'";
+  $sql="DELETE FROM `menu`
+		WHERE menuName ='".$menuName."'";
+		
 		echo $sql;
 	$qry = mysqli_query($con,$sql);
 
 }
 
-//searchByRegNumber function ==================
+/*//searchByRegNumber function ==================
 function findCarByRegNumber()
 {
 //create connection
@@ -100,47 +101,44 @@ $sql = "select * from car where model like '%".$_POST['searchValue']."%'";
 
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
-}
-//============getCarInformation
-function getCarInformation($regNum)
+}*/
+//============getMenuInformation
+function getMenuInformation($menuName)
 {
 //create connection
-$con=mysqli_connect("localhost","web2","web2","cardb");
+$con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql = "select * from car where regNumber = '".$regNum."'";
+$sql = "SELECT * FROM `menu` where menuName = '".$menuName."'";
 
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
 //================updateCarInformation
-function updateCarInformation()
+function updateMenuInformation()
 {
 //create connection
-$con=mysqli_connect("localhost","web38","web38","zootopikadb");
+$con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
 	}
 //get the data to update
- $oldRegNumber = $_POST['regNumber'];
- $newRegNumber = $_POST['newRegNumber'];
- $brand = $_POST['brand'];
- $regDate = $_POST['regDate'];
- $price = $_POST['price'];
- $model = $_POST['model'];
+ $menuName = $_POST['menuName'];
+ $menuType = $_POST['menuType'];
+ $menuPrice = $_POST['menuPrice'];
+ $menuQuantity = $_POST['menuQuantity'];
  
-$sql = 'update car SET regNumber ="'.$newRegNumber.'", brand = "'.$brand.'", model = "'.$model.'", 
-regDate = "'.$regDate.'", price = "'.$price.'" WHERE regNumber = "'.$oldRegNumber.'"';
+$sql = 'update menu SET menuName ="'.$menuName.'", menuType = "'.$menuType.'", menuPrice = "'.$menuQuantity.'" WHERE menuName = "'.$menuName.'"';
 	echo $sql;
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
-//getAvailableCarOnTheseDate function ==================
+/*//getAvailableCarOnTheseDate function ==================
 function getAvailableCarOnTheseDate($startDate ,$endDate)
 {
 $con = mysqli_connect('localhost','web2','web2','cardb');

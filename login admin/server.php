@@ -33,7 +33,7 @@
 			if ($count == 1) {
 				$_SESSION['username'] = $name;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: ../admin%20homepage.php');
+				header('location: ../login%20admin/adminHOME.php');
 			}
 			//customer login
 			$query = "SELECT * FROM `signupcustomer` WHERE name = '" .$_POST['name']. "' and password = '" .$_POST['password']. "'";
@@ -43,7 +43,7 @@
 			if ($count == 1) {
 				$_SESSION['username'] = $name;
 				$_SESSION['success'] = "You are now logged in";
-				header('location: ../admin%20homepage.php');
+				header('location: ../login%20admin/adminHOME.php');
 			}
 			else {
 				array_push($errors, "Wrong username/password combination");

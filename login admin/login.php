@@ -4,8 +4,8 @@
 
 <html>
 <head>
-	<title>Login Admin Page</title>
-	<meta charset="UTF-8">
+	  <title>Admin Log In | FM2GO</title>
+  <link rel="icon" href="fmICON.png" type="image/png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
@@ -42,7 +42,7 @@ img {
 <body>
 
 	<div class="container">
-	<img src="fmICON.png" class="center"/>
+	<img src="fmICON.png" class="center" style="height:300px; width:300px;"/>
 	<div class="w3-container w3-myfont">
   <p class="w3-xxlarge" align ="center">Welcome back Admin! Log in below to access system</p><br>
 	
@@ -50,11 +50,11 @@ img {
 
 		<?php include('errors.php'); ?>
 
-		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter name">
+		<div class="form-input"><div class="wrap-input100 validate-input m-b-20" data-validate="Please enter name">
 			<input class="input100" type="text" name="name" placeholder="Enter your name">
 		<span class="focus-input100"></span>
 			</div>
-		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter password">
+		<div class="form-input"><div class="wrap-input100 validate-input m-b-20" data-validate="Please enter password">
 			<input class="input100" type="password" name="password" placeholder="Enter your password">
 		</div>
 				<div class="text-right p-t-13 p-b-23">
