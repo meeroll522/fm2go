@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Admin Homepage | FM2GO</title>
+  <title>Order | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
-  <meta charset="utf-8">
+ <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style>
   body {
-      font: 20px Montserrat, sans-serif;
+    font: 20px Montserrat, sans-serif;
+	 background-color: #1abc9c; 
+	 background-color: coral;
     line-height: 1.8;
     color: #f5f6f7;
   }
@@ -21,14 +25,14 @@
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
-    color: #ffffff;
+    color: #1abc9c;
   }
   .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
+    background-color: #1abc9c; /* Dark Blue */
     color: #ffffff;
   }
   .bg-3 { 
-    background-color: #ffffff; /* White */
+    background-color: ##1abc9c; /* White */
     color: #555555;
   }
   .bg-4 { 
@@ -47,12 +51,127 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-	
   }
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
-  .site-footer
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+ 
+}
+.button1 {background-color: #4CAF50;} 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+body {
+    color: #566787;
+    background: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+.table-responsive {
+    margin: 30px 0;
+}
+.table-wrapper {
+    min-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+    min-width: 100%;
+}
+.table-title h2 {
+    margin: 8px 0 0;
+    font-size: 22px;
+}
+.search-box {
+    position: relative;        
+    float: right;
+}
+.search-box input {
+    height: 34px;
+    border-radius: 20px;
+    padding-left: 35px;
+    border-color: #ddd;
+    box-shadow: none;
+}
+.search-box input:focus {
+    border-color: #3FBAE4;
+}
+.search-box i {
+    color: #a0a5b1;
+    position: absolute;
+    font-size: 19px;
+    top: 8px;
+    left: 10px;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table td:last-child {
+    width: 130px;
+}
+table.table td a {
+    color: #a0a5b1;
+    display: inline-block;
+    margin: 0 5px;
+}
+table.table td a.view {
+    color: #03A9F4;
+}
+table.table td button.edit {
+    color: #FFC107;
+	border: none;
+    background-color: Transparent;
+}
+table.table td button.delete {
+    color: #E34724;
+	border: none;
+    background-color: Transparent;
+}
+table.table td i {
+    font-size: 19px;
+}    
+
+.hint-text {
+    float: left;
+    margin-top: 6px;
+    font-size: 95%;
+}    
+ .site-footer
 {
   background-color:#26272b;
   padding:45px 0 20px;
@@ -220,13 +339,15 @@
 	top:0; 
 	left:10; 
 } 
- 
+  body {
+  background-image: url("background.jpg");
+}
   body {
     font: 20px Montserrat, sans-serif;
-   
+    line-height: 1.8;
     color: #272e36;
   }
-  p {font-size: 15px;}
+  p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
@@ -238,7 +359,21 @@
   
 }
 
+	body{
+		 background-color:#fffff;
+	}
+	#set {
+	 margin:auto;
+	 width:50%;
+	 text-align:center;
+
+	 }
   </style>
+  <script>
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+});
+</script>
 </head>
 <body>
 
@@ -254,11 +389,11 @@
 	  <div id="logo">
       <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="60" ></a></div>
     </div>
-    </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+	
         <li><a href="http://localhost/masterfolder_fm2go/menu/menu.php">Menu</a></li>
-        <li><a href="http://localhost/masterfolder_fm2go/homepage.html">Homepage</a></li>
+        <li><a href="http://localhost/masterfolder_fm2go/login%20admin/adminHOME.php">Admin Homepage</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/menu/order/">Order</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20admin/">
           <span class="glyphicon glyphicon-log-out"></span>
@@ -267,40 +402,80 @@
     </div>
   </div>
 </nav>
-
-<!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-    <h3 class="margin">Ongoing Promotion</h3><br>
   <img src="fmICON.png" class="img-responsive margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h3>FAMILY MART NU SENTRAL</h3>
 </div>
-<!-- Second Container -->
-<marquee scrollamount="20"
-direction="left"
-behavior="scroll">
-<img src="anisah.jpg" alt="Anisah" width="400" height="550""><img src="adriana.jpg" alt="Anisah" width="400" height="550""><img src="muqhlis.jpg" alt="Anisah" width="400" height="550""><img src="fad.jpg" alt="Anisah" width="500" height="550""><img src="hani.jpg" alt="Anisah" width="400" height="550">
-</marquee>
+<?php
+	include "order/order.php";
 
-<!-- Third Container (Grid) -->
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1); 
+	error_reporting(E_ALL);
+
+	$qry = getListOfOrder();
+	echo '<form action = "order/processOrder.php" method ="POST">';
+	echo '<br><input type = "submit" name="addOrderButton" value ="Create New Order" class="center-block" style="color:black">';
+	
+echo '</form>';
+echo '<br>';
+	echo '<div class="container-lg">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+			         <div class="col-sm-8"><h3>Order <b>Details</b></h3></div>
+				<h4 class="card-title" align="center">  </h4>
+			</div>
+			<div class="card-body">
+			<div class="table-responsive">
+            <table class="table">
+				<thead class=" text-primary">
+					<th>No</th>
+					<th>Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+					<th>Action</th>
+				</thead>';
+	$i=1;
+	while($row=mysqli_fetch_assoc($qry))//Display order information
+	{
+		echo '<tbody>';
+		echo '<tr>';
+		echo '<td>'.$i.'</td>';
+		echo '<td>'.$row['Name'].'</td>';
+		echo '<td>'.$row['Quantity'].'</td>';
+		echo '<td>'.$row['Price'].'</td>';
+		$Name = $row['Name'];
+				echo '<td>';
+			echo '<form style="display:inline-block" action="order/updateOrderForm.php" method="post" >';
+			echo "<input type='hidden' value='$Name' name='NameToUpdate'>";
+			echo '<button type="submit" name="updateOrderButton" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i> </button>';
+			echo '</form>';
+			echo '<form style="display:inline-block" action="order/processOrder.php" method="post" >';
+			echo "<input type='hidden' value='$Name' name='NameToDelete'>";
+			echo '<button type="submit" name="deleteOrderButton" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i> </button>';
+			echo '</form>';
+		echo '</td>';
+		$i++;
+	}
+		echo'</tr>
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+        </div>';
+	?></div>
+	<!-- Third Container (Grid) -->
 <div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">Ongoing Promotion</h3><br>
+  <h3 class="margin">Please check the order details carefully</h3><br>
   <div class="row">
     <div class="col-sm-4">
-      <p>HOT HOT SPICY</p>
-      <img src="promotion-poster01.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>HOT HOT SUMMER</p>
-      <img src="promotion-poster02.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>FRENCH CREME BRULEE SOFUTO</p>
-      <img src="promotion-poster03.jpg" class="img-responsive margin" style="width:100%" alt="Image">
     </div>
   </div>
 </div>
-
 <!-- Footer -->
+<br><br>
    <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -350,5 +525,6 @@ behavior="scroll">
       </div>
 </footer>
 
-</body>
+  </body>
+
 </html>
