@@ -491,7 +491,7 @@ if(isset($_SESSION["cart_item"])){
 }
 ?>
 </div>
-</div>
+</div>  <div align="center"><a href="http://localhost/masterfolder_fm2go/menu/cart/orderList.php">Proceed to send order </a></div>
 <!-- Footer -->
 <br><br>
    <footer class="site-footer">

@@ -527,7 +527,7 @@ echo '<br>';
         </div>
       </div>
 </footer>
-
+ <a href="http://localhost/masterfolder_fm2go/menu/order/order.php">Proceed to send order </a>
   </body>
 
 </html>

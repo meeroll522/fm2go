@@ -470,10 +470,10 @@ echo '<br>';
 <div class="container-fluid bg-3 text-center">    
   <h3 class="margin">Please check the order details carefully</h3><br>
   <div class="row">
-    <div class="col-sm-4">
-    </div>
+   
   </div>
 </div>
+  <div><a href="http://localhost/masterfolder_fm2go/menu/order/order.php">Proceed to send order </a></div>
 <!-- Footer -->
 <br><br>
    <footer class="site-footer">
