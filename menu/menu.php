@@ -5,19 +5,19 @@
   <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>Menu Details | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
-  <meta charset="utf-8">
-
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
   <style>
-   body {
-      font: 20px Montserrat, sans-serif;
+  body {
+    font: 20px Montserrat, sans-serif;
+	 background-color: #1abc9c; 
+	 background-color: coral;
     line-height: 1.8;
     color: #f5f6f7;
   }
@@ -25,14 +25,14 @@
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
-    color: #ffffff;
+    color: #1abc9c;
   }
   .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
+    background-color: #1abc9c; /* Dark Blue */
     color: #ffffff;
   }
   .bg-3 { 
-    background-color: #ffffff; /* White */
+    background-color: ##1abc9c; /* White */
     color: #555555;
   }
   .bg-4 { 
@@ -51,12 +51,127 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-	
   }
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
-  .site-footer
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+ 
+}
+.button1 {background-color: #4CAF50;} 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+body {
+    color: #566787;
+    background: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+.table-responsive {
+    margin: 30px 0;
+}
+.table-wrapper {
+    min-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+    min-width: 100%;
+}
+.table-title h2 {
+    margin: 8px 0 0;
+    font-size: 22px;
+}
+.search-box {
+    position: relative;        
+    float: right;
+}
+.search-box input {
+    height: 34px;
+    border-radius: 20px;
+    padding-left: 35px;
+    border-color: #ddd;
+    box-shadow: none;
+}
+.search-box input:focus {
+    border-color: #3FBAE4;
+}
+.search-box i {
+    color: #a0a5b1;
+    position: absolute;
+    font-size: 19px;
+    top: 8px;
+    left: 10px;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table td:last-child {
+    width: 130px;
+}
+table.table td a {
+    color: #a0a5b1;
+    display: inline-block;
+    margin: 0 5px;
+}
+table.table td a.view {
+    color: #03A9F4;
+}
+table.table td button.edit {
+    color: #FFC107;
+	border: none;
+    background-color: Transparent;
+}
+table.table td button.delete {
+    color: #E34724;
+	border: none;
+    background-color: Transparent;
+}
+table.table td i {
+    font-size: 19px;
+}    
+
+.hint-text {
+    float: left;
+    margin-top: 6px;
+    font-size: 95%;
+}    
+ .site-footer
 {
   background-color:#26272b;
   padding:45px 0 20px;
@@ -224,13 +339,15 @@
 	top:0; 
 	left:10; 
 } 
- 
+  body {
+  background-image: url("background.jpg");
+}
   body {
     font: 20px Montserrat, sans-serif;
-   
+    line-height: 1.8;
     color: #272e36;
   }
-  p {font-size: 15px;}
+  p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
@@ -239,96 +356,28 @@
   
 .w3-myfont {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  }
-  body {
-    color: #404E67;
-    background: #F5F7FA;
-    font-family: 'Open Sans', sans-serif;
+  
 }
-.table-wrapper {
-    width: 500px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 20px;	
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
-.table-title {
-    padding-bottom: 10px;
-    margin: 0 0 10px;
-}
-.table-title h2 {
-    margin: 6px 0 0;
-    font-size: 22px;
-}
-.table-title .add-new {
-    float: right;
-    height: 30px;
-    font-weight: bold;
-    font-size: 12px;
-    text-shadow: none;
-    min-width: 100px;
-    border-radius: 50px;
-    line-height: 13px;
-}
-.table-title .add-new i {
-    margin-right: 4px;
-}
-table.table {
-    table-layout: fixed;
-}
-table.table tr th, table.table tr td {
-    border-color: #e9e9e9;
-}
-table.table th i {
-    font-size: 13px;
-    margin: 0 5px;
-    cursor: pointer;
-}
-table.table th:last-child {
-    width: 100px;
-}
-table.table td a {
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 5px;
-    min-width: 24px;
-}    
-table.table td a.add {
-    color: #27C46B;
-}
-table.table td button.edit {
-    color: #FFC107;
-	border: none;
-    background-color: Transparent;
-}
-table.table td button.delete {
-    color: #E34724;
-	border: none;
-    background-color: Transparent;
-}
-table.table td i {
-    font-size: 19px;
-}
-table.table td a.add i {
-    font-size: 24px;
-    margin-right: -1px;
-    position: relative;
-    top: 3px;
-}    
-table.table .form-control {
-    height: 32px;
-    line-height: 32px;
-    box-shadow: none;
-    border-radius: 2px;
-}
-table.table .form-control.error {
-    border-color: #f50000;
-}
-table.table td .add {
-    display: none;
-}
+
+	body{
+		 background-color:#fffff;
+	}
+	#set {
+	 margin:auto;
+	 width:50%;
+	 text-align:center;
+
+	 }
   </style>
-  <!-- Navbar -->
+  <script>
+$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+</head>
+<body>
+
+<!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
@@ -345,7 +394,7 @@ table.table td .add {
 	
         <li><a href="http://localhost/masterfolder_fm2go/menu/menu.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/login%20admin/adminHOME.php">Admin Homepage</a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/menu/order.php">Order</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/menu/order/">Order</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20admin/">
           <span class="glyphicon glyphicon-log-out"></span>
         </a></li>
@@ -353,24 +402,9 @@ table.table td .add {
     </div>
   </div>
 </nav>
-<script>
-$(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip();
-	var actions = $("table td:last-child").html();
-	
-</script>
-</head>
-<body>
-
-<!-- First Container -->
-<!-- First Container -->
 <div class="container-fluid bg-1 text-center">
   <img src="fmICON.png" class="img-responsive margin" style="display:inline" alt="Bird" width="350" height="350">
 </div>
-<div class="text-center"><br>
-  <h3 class="margin">Welcome to Menu Detail Homepage! Choose what you want to do today</h3>
-</div>
-
 <?php
 	include "menu/menu.php";
 
@@ -380,16 +414,22 @@ $(document).ready(function(){
 
 	$qry = getListOfMenu();
 	echo '<form action = "menu/processMenu.php" method ="POST">';
-	echo '<br><input type = "submit" name="addMenuButton" value ="Create New Menu" class="center-block" style="color:black" class="login100-form-btn" class="container-login100-form-btn" class="btn btn-info add-new" i class="fa fa-plus">';
+	echo '<br><input type = "submit" name="addMenuButton" value ="Create New Menu" class="center-block" style="color:black">';
 	
 echo '</form>';
-echo '<br><br>';
-	echo '
-                </div>
-            </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
+echo '<br>';
+	echo '<div class="container-lg">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+			         <div class="col-sm-8"><h3>Menu <b>Details</b></h3></div>
+				<h4 class="card-title" align="center">  </h4>
+			</div>
+			<div class="card-body">
+			<div class="table-responsive">
+            <table class="table">
+				<thead class=" text-primary">
 					<th>No</th>
 					<th>Name</th>
 					<th>Type</th>
@@ -408,17 +448,17 @@ echo '<br><br>';
 		echo '<td>'.$row['menuPrice'].'</td>';
 		echo '<td>'.$row['menuQuantity'].'</td>';
 		$menuName = $row['menuName'];
-		echo '<td>';
+				echo '<td>';
 			echo '<form style="display:inline-block" action="menu/updateMenuForm.php" method="post" >';
-			echo "<input type='hidden' value='$menuName' name='menuNameToUpdate' class='edit' title='Edit' data-toggle='tooltip'>";
-			echo '<button type="submit" name="updateMenu" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i> </button>';
+			echo "<input type='hidden' value='$menuName' name='menuNameToUpdate'>";
+			echo '<button type="submit" name="updateMenuButton" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i> </button>';
 			echo '</form>';
-			echo '<form style="display:inline-block" action="processMenu.php" method="post" >';
+			echo '<form style="display:inline-block" action="menu/processMenu.php" method="post" >';
 			echo "<input type='hidden' value='$menuName' name='menuNameToDelete'>";
-			echo '<button type="submit" name="deleteMenu" class="delete" title="Delete" data-toggle="tooltip">
-			<i class="material-icons">&#xE872;</i> </button>';
+			echo '<button type="submit" name="deleteMenuButton" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i> </button>';
 			echo '</form>';
 		echo '</td>';
+		//delete menu
 		$i++;
 	}
 		echo'</tr>
@@ -428,19 +468,23 @@ echo '<br><br>';
         </div>
         </div>
         </div>';
-	?></div><br><br>
-
-						<!-- Footer -->
+	?></div>
+	<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Please check the menu details carefully</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<br><br>
    <footer class="site-footer">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-6">
             <h6>About</h6>
-            <p class="text-justify"> All of FamilyMart Malaysia's food service and ready-to-eat selections are made with halal ingredients only. 
-			The service is currently in the midst of the halal application process with JAKIM. 
-			The products available in FamilyMart that are Halal certified will carry the Halal logo on its packaging. 
-			For products that are imported from Japan, Korea or Taiwan, the product ingredients will be vetted to ensure that no 
-			haram ingredients such as pork, lard or alcoholic substance were used.</p>
+            <p class="text-justify"> All of FamilyMart Malaysia's food service and ready-to-eat selections are made with halal ingredients only. The service is currently in the midst of the halal application process with JAKIM. The products available in FamilyMart that are Halal certified will carry the Halal logo on its packaging. For products that are imported from Japan, Korea or Taiwan, the product ingredients will be vetted to ensure that no haram ingredients such as pork, lard or alcoholic substance were used.</p>
           </div>
 
          <div class="col-xs-6 col-md-3">

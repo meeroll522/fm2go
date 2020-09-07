@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Admin Homepage | FM2GO</title>
+   <title>Update Order | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-  body {
+ body {
       font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
@@ -27,10 +23,8 @@
     background-color: #474e5d; /* Dark Blue */
     color: #ffffff;
   }
-  .bg-3 { 
-    background-color: #ffffff; /* White */
-    color: #555555;
-  }
+
+  
   .bg-4 { 
     background-color: #2f2f2f; /* Black Gray */
     color: #fff;
@@ -52,6 +46,7 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+  
   .site-footer
 {
   background-color:#26272b;
@@ -220,13 +215,15 @@
 	top:0; 
 	left:10; 
 } 
- 
+  body {
+  background-image: url("background.jpg");
+}
   body {
     font: 20px Montserrat, sans-serif;
-   
+    line-height: 1.8;
     color: #272e36;
   }
-  p {font-size: 15px;}
+  p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
@@ -238,10 +235,16 @@
   
 }
 
-  </style>
-</head>
-<body>
+	body{
+		 background-color:#fffff;
+	}
+	#set {
+	 margin:auto;
+	 width:50%;
+	 text-align:center;
 
+	 }
+</style>
 <!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container">
@@ -254,53 +257,64 @@
 	  <div id="logo">
       <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="60" ></a></div>
     </div>
-    </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+	
         <li><a href="http://localhost/masterfolder_fm2go/menu/menu.php">Menu</a></li>
-        <li><a href="http://localhost/masterfolder_fm2go/homepage.html">Homepage</a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/menu/order/">Order</a></li>
+        <li><a href="http://localhost/masterfolder_fm2go/login%20admin/adminHOME.php">Admin Homepage</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/menu/order.php">Order</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20admin/">
           <span class="glyphicon glyphicon-log-out"></span>
         </a></li>
       </ul>
     </div>
   </div>
-</nav>
+</nav><br><br>
+<?php
+session_start();
 
-<!-- First Container -->
-<div class="container-fluid bg-1 text-center">
-    <h3 class="margin">Ongoing Promotion</h3><br>
-  <img src="fmICON.png" class="img-responsive margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h3>FAMILY MART NU SENTRAL</h3>
-</div>
-<!-- Second Container -->
-<marquee scrollamount="20"
-direction="left"
-behavior="scroll">
-<img src="anisah.jpg" alt="Anisah" width="400" height="550""><img src="adriana.jpg" alt="Anisah" width="400" height="550""><img src="muqhlis.jpg" alt="Anisah" width="400" height="550""><img src="fad.jpg" alt="Anisah" width="500" height="550""><img src="hani.jpg" alt="Anisah" width="400" height="550">
-</marquee>
+ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 
-<!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">Ongoing Promotion</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <p>HOT HOT SPICY</p>
-      <img src="promotion-poster01.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>HOT HOT SUMMER</p>
-      <img src="promotion-poster02.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>FRENCH CREME BRULEE SOFUTO</p>
-      <img src="promotion-poster03.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-  </div>
-</div>
+include "order.php";	
+	
+$con = mysqli_connect('localhost','fm2go','fm2go','fm2go') or die('Unable To connect');
 
+
+//updateOrderForm.php
+
+$Name=$_POST['NameToUpdate'];
+$qry = getOrderInformation($Name);//call function to get detail order data
+$row = mysqli_fetch_assoc($qry);
+//assign data to variable
+ $Id = $_POST['Id'];
+ $Name = $_POST['Name'];
+ $Quantity = $_POST['Quantity'];
+ $Price = $_POST['Price'];
+ 
+
+echo '<div id ="set" style="line-height: 1;">';
+echo '<form action="processOrder.php" method="post">';
+echo '<fieldset><legend>Order Information Update:</legend>';
+echo 'Menu Order Name : ';
+echo "<input type='text' name='Name' value='$Name' >";
+echo '<br>';
+echo '<br>Quantity : ';
+echo "<input type='text' name='Quantity' value='$Quantity'>";
+echo '<br>';
+echo '<br>Total Price : ';
+echo "<input type='number' name='Price' value='$Price' step='0.01'>";
+echo '<br>';
+echo '<br><br><input type="submit" name="updateOrderButton" value="Save">  ';
+echo '<input type ="reset" name="resetButton" value="reset">';
+
+echo '</fieldset>';
+echo '</form>';
+echo '</div>';
+?>
 <!-- Footer -->
+<br><br>
    <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -349,6 +363,3 @@ behavior="scroll">
         </div>
       </div>
 </footer>
-
-</body>
-</html>

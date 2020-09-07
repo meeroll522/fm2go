@@ -1,19 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Admin Homepage | FM2GO</title>
+<?php
+session_start();
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+if(!empty($_GET["action"])) {
+switch($_GET["action"]) {
+	case "add":
+		if(!empty($_POST["quantity"])) {
+			$productByType = $db_handle->runQuery("SELECT * FROM tblproduct WHERE type='" . $_GET["type"] . "'");
+			$itemArray = array($productByType[0]["type"]=>array('name'=>$productByType[0]["name"], 'type'=>$productByType[0]["type"], 'quantity'=>$_POST["quantity"], 'price'=>$productByType[0]["price"], 'image'=>$productByType[0]["image"]));
+			
+			if(!empty($_SESSION["cart_item"])) {
+				if(in_array($productByType[0]["type"],array_keys($_SESSION["cart_item"]))) {
+					foreach($_SESSION["cart_item"] as $k => $v) {
+							if($productByType[0]["type"] == $k) {
+								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+									$_SESSION["cart_item"][$k]["quantity"] = 0;
+								}
+								$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+							}
+					}
+				} else {
+					$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+				}
+			} else {
+				$_SESSION["cart_item"] = $itemArray;
+			}
+		}
+	break;
+	case "remove":
+		if(!empty($_SESSION["cart_item"])) {
+			foreach($_SESSION["cart_item"] as $k => $v) {
+					if($_GET["type"] == $k)
+						unset($_SESSION["cart_item"][$k]);				
+					if(empty($_SESSION["cart_item"]))
+						unset($_SESSION["cart_item"]);
+			}
+		}
+	break;
+	case "empty":
+		unset($_SESSION["cart_item"]);
+	break;	
+}
+}
+?>
+<HTML>
+<title>Order Details | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
-  <meta charset="utf-8">
+<link href="style.css" type="text/css" rel="stylesheet" />
+ <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <style>
-  body {
-      font: 20px Montserrat, sans-serif;
+   body {
+    font: 20px Montserrat, sans-serif;
+	 background-color: #1abc9c; 
+	 background-color: coral;
     line-height: 1.8;
     color: #f5f6f7;
   }
@@ -21,14 +67,14 @@
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
-    color: #ffffff;
+    color: #1abc9c;
   }
   .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
+    background-color: #1abc9c; /* Dark Blue */
     color: #ffffff;
   }
   .bg-3 { 
-    background-color: #ffffff; /* White */
+    background-color: ##1abc9c; /* White */
     color: #555555;
   }
   .bg-4 { 
@@ -47,12 +93,127 @@
     margin-bottom: 0;
     font-size: 12px;
     letter-spacing: 5px;
-	
   }
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
-  .site-footer
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  
+}
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+ 
+}
+.button1 {background-color: #4CAF50;} 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+body {
+    color: #566787;
+    background: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+}
+.table-responsive {
+    margin: 30px 0;
+}
+.table-wrapper {
+    min-width: 1000px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.table-title {
+    padding-bottom: 10px;
+    margin: 0 0 10px;
+    min-width: 100%;
+}
+.table-title h2 {
+    margin: 8px 0 0;
+    font-size: 22px;
+}
+.search-box {
+    position: relative;        
+    float: right;
+}
+.search-box input {
+    height: 34px;
+    border-radius: 20px;
+    padding-left: 35px;
+    border-color: #ddd;
+    box-shadow: none;
+}
+.search-box input:focus {
+    border-color: #3FBAE4;
+}
+.search-box i {
+    color: #a0a5b1;
+    position: absolute;
+    font-size: 19px;
+    top: 8px;
+    left: 10px;
+}
+table.table tr th, table.table tr td {
+    border-color: #e9e9e9;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+    background: #f5f5f5;
+}
+table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+table.table td:last-child {
+    width: 130px;
+}
+table.table td a {
+    color: #a0a5b1;
+    display: inline-block;
+    margin: 0 5px;
+}
+table.table td a.view {
+    color: #03A9F4;
+}
+table.table td button.edit {
+    color: #FFC107;
+	border: none;
+    background-color: Transparent;
+}
+table.table td button.delete {
+    color: #E34724;
+	border: none;
+    background-color: Transparent;
+}
+table.table td i {
+    font-size: 19px;
+}    
+
+.hint-text {
+    float: left;
+    margin-top: 6px;
+    font-size: 95%;
+}    
+ .site-footer
 {
   background-color:#26272b;
   padding:45px 0 20px;
@@ -220,13 +381,15 @@
 	top:0; 
 	left:10; 
 } 
- 
+  body {
+  background-image: url("background.jpg");
+}
   body {
     font: 20px Montserrat, sans-serif;
-   
+    line-height: 1.8;
     color: #272e36;
   }
-  p {font-size: 15px;}
+  p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
@@ -238,11 +401,19 @@
   
 }
 
+	body{
+		 background-color:#fffff;
+	}
+	#set {
+	 margin:auto;
+	 width:50%;
+	 text-align:center;
+	 }
+	 div.a {
+  text-align: center;
+}
   </style>
-</head>
-<body>
-
-<!-- Navbar -->
+  <!-- Navbar -->
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
@@ -254,11 +425,11 @@
 	  <div id="logo">
       <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="60" ></a></div>
     </div>
-    </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+	
         <li><a href="http://localhost/masterfolder_fm2go/menu/menu.php">Menu</a></li>
-        <li><a href="http://localhost/masterfolder_fm2go/homepage.html">Homepage</a></li>
+        <li><a href="http://localhost/masterfolder_fm2go/login%20admin/adminHOME.php">Admin Homepage</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/menu/order/">Order</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20admin/">
           <span class="glyphicon glyphicon-log-out"></span>
@@ -267,40 +438,62 @@
     </div>
   </div>
 </nav>
-
-<!-- First Container -->
 <div class="container-fluid bg-1 text-center">
-    <h3 class="margin">Ongoing Promotion</h3><br>
   <img src="fmICON.png" class="img-responsive margin" style="display:inline" alt="Bird" width="350" height="350">
-  <h3>FAMILY MART NU SENTRAL</h3>
 </div>
-<!-- Second Container -->
-<marquee scrollamount="20"
-direction="left"
-behavior="scroll">
-<img src="anisah.jpg" alt="Anisah" width="400" height="550""><img src="adriana.jpg" alt="Anisah" width="400" height="550""><img src="muqhlis.jpg" alt="Anisah" width="400" height="550""><img src="fad.jpg" alt="Anisah" width="500" height="550""><img src="hani.jpg" alt="Anisah" width="400" height="550">
-</marquee>
+<BODY>
+<div id="shopping-cart">
+<div class="txt-heading">Order details by customer</div><br>
+<?php
+if(isset($_SESSION["cart_item"])){
+    $total_quantity = 0;
+    $total_price = 0;
+?>	
+<table class="tbl-cart" cellpadding="10" cellspacing="1">
+<tbody>
+<tr>
+<th style="text-align:left;">Name</th>
+<th style="text-align:left;">Type</th>
+<th style="text-align:right;" width="5%">Quantity</th>
+<th style="text-align:right;" width="10%">Unit Price</th>
+<th style="text-align:right;" width="10%">Price</th>
+</tr>	
+<?php		
+    foreach ($_SESSION["cart_item"] as $item){
+        $item_price = $item["quantity"]*$item["price"];
+		?>
+				<tr>
+				<td><class="cart-item-image" /><?php echo $item["name"]; ?></td>
+				<td><?php echo $item["type"]; ?></td>
+				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
+				<td  style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
+				<td  style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
+				</tr>
+				<?php
+				$total_quantity += $item["quantity"];
+				$total_price += ($item["price"]*$item["quantity"]);
+		}
+		?>
 
-<!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
-  <h3 class="margin">Ongoing Promotion</h3><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <p>HOT HOT SPICY</p>
-      <img src="promotion-poster01.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>HOT HOT SUMMER</p>
-      <img src="promotion-poster02.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-    <div class="col-sm-4"> 
-      <p>FRENCH CREME BRULEE SOFUTO</p>
-      <img src="promotion-poster03.jpg" class="img-responsive margin" style="width:100%" alt="Image">
-    </div>
-  </div>
+<tr>
+<td colspan="2" align="right">Total:</td>
+<td align="right"><?php echo $total_quantity; ?></td>
+<td align="right" colspan="2"><strong><?php echo "$ ".number_format($total_price, 2); ?></strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>		
+  <?php
+} else {
+?>
+<div class="no-records">Your Cart is Empty</div>
+<?php 
+}
+?>
 </div>
-
+</div>
 <!-- Footer -->
+<br><br>
    <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -349,6 +542,5 @@ behavior="scroll">
         </div>
       </div>
 </footer>
-
-</body>
-</html>
+</BODY>
+</HTML>

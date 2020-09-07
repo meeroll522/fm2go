@@ -20,7 +20,7 @@ if(isSet($_POST['deleteMenuButton']))
 if(isSet($_POST['updateMenuButton']))
 	{
 	updateMenuInformation();
-	header( "refresh:1; url=menu.php" );
+	header( "refresh:1; url=../menu.php" );
 	}
 
 
