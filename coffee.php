@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>FM2GO WEB</title>
+  <title>Coffee | FM2GO</title>
+    <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -49,6 +50,11 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+  #logo{ 
+	position:absolute; 
+	top:0; 
+	left:10; 
+} 
   </style>
 </head>
 <body>
@@ -62,15 +68,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html">FAMILY MART 2 GO</a>
+	  </div>
+	  <div id="logo">
+      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Profile</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
+		<li> 0</li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
@@ -83,43 +93,43 @@
 
   <div class="row">
     <div class="col-sm-4">
-      <p><b>Americano</b></p> <br>
-	  <img src="menu/menu pic/americano.jpg" alt="123" width="290" height="250"> 
+      <p><b>Americano<br> RM 7.00</b></p> <br>
+	  <img src="menu/menu pic/americano.jpg" alt="123" width="290" height="250">  
 
     </div>
     <div class="col-sm-4"> 
-      <p><b>Latte</b></p> <br>
-	  <img src="menu/menu pic/latte.jpg" alt="Anisah" width="290" height="250">
+      <p><b>Latte<br> RM 8.00</b></p> <br>
+	  <img src="menu/menu pic/latte.jpg" alt="Anisah" width="290" height="250"> 
     </div>
 	<div class="col-sm-4"> 
-      <p><b>Cappucino</b></p> <br>
-	  <img src="menu/menu pic/cappucino.jpg" alt="Anisah" width="290" height="250">
+      <p><b>Cappucino<br> RM 7.00</b></p> <br>
+	  <img src="menu/menu pic/cappucino.jpg" alt="Anisah" width="290" height="250"> 
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
-     <br> <p><b>Mocha</b></p> <br>
-	  <img src="menu/menu pic/mocha.jpg" alt="Anisah" width="290" height="250">
+     <br> <p><b>Mocha<br> RM 6.00</b></p> <br>
+	  <img src="menu/menu pic/mocha.jpg" alt="Anisah" width="290" height="250"> 
 
     </div>
     <div class="col-sm-4"> 
-     <br> <p><b>Iced Americano</b></p> <br>
+     <br> <p><b>Iced Americano<br> RM 8.00</b></p> <br>
 	  <img src="menu/menu pic/iamericano.jpg" alt="Anisah" width="290" height="250">
 	  
     </div>
 	<div class="col-sm-4"> 
-     <br> <p><b>Iced Latte </b></p> <br>
-	  <img src="menu/menu pic/ilatte.jpg" alt="Anisah" width="290" height="250">
+     <br> <p><b>Iced Latte <br> RM 9.00</b></p> <br>
+	  <img src="menu/menu pic/ilatte.jpg" alt="Anisah" width="290" height="250"> 
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Iced Cappucino</b></p> <br>
-	  <img src="menu/menu pic/icappucino.jpg" alt="Anisah" width="290" height="250">
+     <br> <p><b>Iced Cappucino<br> RM 8.00</b></p> <br>
+	  <img src="menu/menu pic/icappucino.jpg" alt="Anisah" width="290" height="250"> 
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Iced Mocha </b></p> <br>
-	  <img src="menu/menu pic/imocha.jpg" alt="Anisah" width="290" height="250">
+     <br> <p><b>Iced Mocha<br> RM 7.00 </b></p> <br>
+	  <img src="menu/menu pic/imocha.jpg" alt="Anisah" width="290" height="250"> 
 
       </div>
 	  

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>FM2GO WEB</title>
+  <title>Bread | FM2GO</title>
+    <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -49,6 +50,11 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+ #logo{ 
+	position:absolute; 
+	top:0; 
+	left:10; 
+} 
   </style>
 </head>
 <body>
@@ -62,15 +68,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html">FAMILY MART 2 GO</a>
+	  </div>
+	  <div id="logo">
+      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Profile</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
+		<li> 0</li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
@@ -83,47 +93,47 @@
 
   <div class="row">
     <div class="col-sm-4">
-      <p><b>Matcha Roll Cake</b></p> <br>
-	  <img src="menu/menu pic/macha.jpg" alt="123" width="290" height="250"> 
+      <p><b>Matcha Roll Cake<br> RM 6.00</b></p> <br>
+	  <img src="menu/menu pic/macha.jpg" alt="123" width="290" height="250">  
 
     </div>
     <div class="col-sm-4"> 
-      <p><b>Honey Roll Cake</b></p> <br>
+      <p><b>Honey Roll Cake<br> RM 6.00</b></p> <br>
 	  <img src="menu/menu pic/honey.jpg" alt="Anisah" width="290" height="250">
     </div>
 	<div class="col-sm-4"> 
-      <p><b>Brownie</b></p> <br>
+      <p><b>Brownie<br> RM 7.00</b></p> <br>
 	  <img src="menu/menu pic/brownie.jpg" alt="Anisah" width="290" height="250">
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
-     <br> <p><b>Cheesy Stick</b></p> <br>
+     <br> <p><b>Cheesy Stick<br> RM 4.00</b></p> <br>
 	  <img src="menu/menu pic/stick.jpg" alt="Anisah" width="290" height="250">
 
     </div>
     <div class="col-sm-4"> 
-     <br> <p><b>Parmesan Garlic Bun</b></p> <br>
+     <br> <p><b>Parmesan Garlic Bun<br> RM 5.00</b></p> <br>
 	  <img src="menu/menu pic/garlic.jpg" alt="Anisah" width="290" height="250">
 	  
     </div>
 	<div class="col-sm-4"> 
-     <br> <p><b>Parmesan Chicken Slice</b></p> <br>
+     <br> <p><b>Parmesan Chicken Slice<br> RM 4.00</b></p> <br>
 	  <img src="menu/menu pic/chicken.jpg" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Peanut Roll</b></p> <br>
+     <br> <p><b>Peanut Roll<br> RM 5.00</b></p> <br>
 	  <img src="menu/menu pic/peanut.jpg" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Choclate Bun</b></p> <br>
-	  <img src="menu/menu pic/choclate.jpg" alt="Anisah" width="290" height="250">
+     <br> <p><b>Choclate Bun<br> RM 4.00</b></p> <br>
+	  <img src="menu/menu pic/choclate.jpg" alt="Anisah" width="290" height="250"><
 
       </div>
 	  	  <div class="col-sm-4"> 
-     <br> <p><b>Mexican Bun</b></p> <br>
+     <br> <p><b>Mexican Bun<br> RM 4.00</b></p> <br>
 	  <img src="menu/menu pic/mexican.jpg" alt="Anisah" width="290" height="250">
 
       </div>

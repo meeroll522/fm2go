@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>FM2GO WEB</title>
+  <title>Oden | FM2GO</title>
+    <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -50,6 +51,11 @@
     color: #1abc9c !important;
   }
 
+#logo{ 
+	position:absolute; 
+	top:0; 
+	left:10; 
+} 
   </style>
 </head>
 <body>
@@ -63,15 +69,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html">FAMILY MART 2 GO</a>
+	  </div>
+	  <div id="logo">
+      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Profile</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
+		<li> 0</li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
@@ -84,27 +94,27 @@
 
   <div class="row">
     <div class="col-sm-4">
-      <p><b>Corn Set</b></p> <br>
+      <p><b>Corn Set<br> RM 3.00</b></p> <br>
 	  <img src="menu/menu pic/corn.jpg" alt="123" width="290" height="250"> 
 
     </div>
     <div class="col-sm-4"> 
-      <p><b>Ajitsuke Set</b></p> <br>
+      <p><b>Ajitsuke Set<br> RM 2.00</b></p> <br>
 	  <img src="menu/menu pic/ajitsuke.jpg" alt="Anisah" width="290" height="250">
     </div>
 	<div class="col-sm-4"> 
-      <p><b>Fish Cake Set</b></p> <br>
+      <p><b>Fish Cake Set<br> RM 3.00</b></p> <br>
 	  <img src="menu/menu pic/fishcake.jpg" alt="Anisah" width="290" height="250">
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
-     <br> <p><b>Daikon Set</b></p> <br>
+     <br> <p><b>Daikon Set<br> RM 3.00</b></p> <br>
 	  <img src="menu/menu pic/daikon.jpg" alt="Anisah" width="290" height="250">
 
     </div>
     <div class="col-sm-4"> 
-     <br> <p><b>Fish Ball Set</b></p> <br>
+     <br> <p><b>Fish Ball Set<br> RM 2.00</b></p> <br>
 	  <img src="menu/menu pic/fishball.jpg" alt="Anisah" width="290" height="250">
 	  
     </div>
@@ -120,47 +130,47 @@
 	
 
 	  <div class="col-sm-4"> 
-     <br> <p><b>Corn</b></p> <br>
+     <br> <p><b>Corn<br> RM 1.50</b></p> <br>
 	  <img src="menu/menu pic/corn1.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Ajitsuke Tamago </b></p> <br>
+     <br> <p><b>Ajitsuke Tamago<br> RM 1.00 </b></p> <br>
 	  <img src="menu/menu pic/tamago.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  	  <div class="col-sm-4"> 
-     <br> <p><b>Daikon </b></p> <br>
+     <br> <p><b>Daikon<br> RM 1.20 </b></p> <br>
 	  <img src="menu/menu pic/daikonadd.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  	  	  <div class="col-sm-4"> 
-     <br> <p><b>Chicken Ball </b></p> <br>
+     <br> <p><b>Chicken Ball<br> RM 1.20 </b></p> <br>
 	  <img src="menu/menu pic/chickenball.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  	  	  <div class="col-sm-4"> 
-     <br> <p><b>White Fish Ball </b></p> <br>
+     <br> <p><b>White Fish Ball<br> RM 1.00 </b></p> <br>
 	  <img src="menu/menu pic/whitefish.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  	  	  <div class="col-sm-4"> 
-     <br> <p><b>Seafood Tofu Fish Cake </b></p> <br>
+     <br> <p><b>Seafood Tofu Fish Cake<br> RM 2.30 </b></p> <br>
 	  <img src="menu/menu pic/seafoodtofu.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  	  	  	  <div class="col-sm-4"> 
-     <br> <p><b>Crab Fish Cake</b></p> <br>
+     <br> <p><b>Crab Fish Cake<br> RM 2.50</b></p> <br>
 	  <img src="menu/menu pic/crabfish.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  	  	  	  <div class="col-sm-4"> 
-     <br> <p><b>Veggie Fish Cake </b></p> <br>
+     <br> <p><b>Veggie Fish Cake<br> RM 2.00 </b></p> <br>
 	  <img src="menu/menu pic/veggie.jpg" alt="Anisah" width="220" height="220">
 
       </div>
 	  	  	  	  <div class="col-sm-4"> 
-     <br> <p><b>King Crab Chunk </b></p> <br>
+     <br> <p><b>King Crab Chunk<br> RM 2.70 </b></p> <br>
 	  <img src="menu/menu pic/kingcrab.jpg" alt="Anisah" width="220" height="220">
 
       </div>

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>FM2GO WEB</title>
+  <title>Sandwich | FM2GO</title>
+    <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -49,6 +50,11 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+#logo{ 
+	position:absolute; 
+	top:0; 
+	left:10; 
+} 
   </style>
 </head>
 <body>
@@ -62,15 +68,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html">FAMILY MART 2 GO</a>
+	  </div>
+	  <div id="logo">
+      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Profile</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
+		<li> 0</li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
@@ -83,42 +93,42 @@
 
   <div class="row">
     <div class="col-sm-4">
-      <p><b>Teriyaki Chicken</b></p> <br>
+      <p><b>Teriyaki Chicken<br> RM 6.90</b></b></p> <br>
 	  <img src="menu/menu pic/teriyaki.png" alt="Anisah" width="290" height="250"> 
 
     </div>
     <div class="col-sm-4"> 
-      <p><b>Chicken katsu</b></p> <br>
+      <p><b>Chicken katsu<br> RM 5.50</b></b></p> <br>
 	  <img src="menu/menu pic/katsu.png" alt="Anisah" width="290" height="250">
     </div>
 	<div class="col-sm-4"> 
-      <p><b>Crab meat</b></p> <br>
+      <p><b>Crab meat<br> RM 5.00</b></b></p> <br>
 	  <img src="menu/menu pic/crab.png" alt="Anisah" width="290" height="250">
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
-     <br> <p><b>Egg</b></p> <br>
+     <br> <p><b>Egg<br> RM 3.50</b></b></p> <br>
 	  <img src="menu/menu pic/egg.png" alt="Anisah" width="290" height="250">
 
     </div>
     <div class="col-sm-4"> 
-     <br> <p><b>Ham</b></p> <br>
+     <br> <p><b>Ham<br> RM 6.00</b></b></p> <br>
 	  <img src="menu/menu pic/ham.png" alt="Anisah" width="290" height="250">
 	  
     </div>
 	<div class="col-sm-4"> 
-     <br> <p><b>Tuna Mayo</b></p> <br>
+     <br> <p><b>Tuna Mayo<br> RM 2.90</b></b></p> <br>
 	  <img src="menu/menu pic/tuna.png" alt="Anisah" width="290" height="250">
 	  
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Chicken Mayo</b></p> <br>
+     <br> <p><b>Chicken Mayo<br> RM 5.30</b></b></p> <br>
 	  <img src="menu/menu pic/chickenmayo.png" alt="Anisah" width="290" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Sardine Mayo</b></p> <br>
+     <br> <p><b>Sardine Mayo<br> RM 2.90</b></b></p> <br>
 	  <img src="menu/menu pic/sardine.png" alt="Anisah" width="290" height="250">
 
       </div>

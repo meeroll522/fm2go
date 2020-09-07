@@ -64,9 +64,11 @@
 			$row = mysqli_fetch_assoc($results);
 			
 			if ($count == 1) {
-				$_SESSION['name'] = $username;
+				$_SESSION['username'] = $_POST['name'];
+				$_SESSION['password'] = $_POST['password'];
 				$_SESSION['success'] = "You are now logged in";
-				header('location: ../masterfolder_fm2go/homepage.html');
+				print_r($_SESSION);
+				header('location: ../homepage.html');
 
 			}
 

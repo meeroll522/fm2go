@@ -2,15 +2,44 @@
 <html lang="en">
 	
 <?php
-  session_start();
+	session_start();
+	print_r($_SESSION);
+	if ($_SESSION['name'] != '') {
+	  session_destroy();
+	  header("Location: homepage.html");
+	}
+	if (isset($_POST['logout'])) {
+	  header("Location: masterfolder_fm2go/login%20customer/login.php");
+	}
 
-if (!(isset($_SESSION['name']) && $_SESSION['name'] != '')) {
-  session_destroy();
-  header("Location: masterfolder_fm2go/homepage.html");
-}
-if (isset($_POST['logout'])) {
-  header("Location: masterfolder_fm2go/login%20customer/login.php");
-}
+	if(isset($_POST['update'])){
+		
+		$con = mysqli_connect("localhost","fm2go","fm2go","fm2go");
+        if (!$con) {
+            echo  mysqli_connect_error();
+            exit;
+        }
+
+        
+        $sql = "UPDATE `signupcustomer` SET 
+		`name` = '".$_POST['name']."', 
+		`fname` = '".$_POST['fname']."', 
+		`lname` = '".$_POST['lname']."', 
+		`email` = '".$_POST['email']."',
+		`password` = '".$_POST['password']."',		
+		`contact` = '".$_POST['contact']."'
+        WHERE `signupcustomer`.`name` = '".$_SESSION['username']."'";
+        $result = mysqli_query($con, $sql);
+		
+
+
+		
+		//update session
+		$_SESSION['username'] = $_POST['name'];
+		$_SESSION['password'] = $_POST['password'];
+
+	}
+
 ?>
 <head>
 
@@ -154,7 +183,7 @@ if (isset($_POST['logout'])) {
 					
 					<form method="POST" action="" enctype="multipart/form-data">
                    <div class="text-center" >
-					   <?php echo '<img src="imageView.php?username='.$_SESSION['name'].'" class="avatar img-circle img-thumbnail">'; ?>
+					   <?php echo '<img src="imageView.php?username='.$_SESSION['username'].'" class="avatar img-circle img-thumbnail">'; ?>
 						<br><br>
 				
 					<input type="file"  name="image" class="text-center center-block file-upload"> <br><br>	
@@ -197,7 +226,7 @@ if (isset($_POST['logout'])) {
               </ul>
               <div class="tab-content pt-3">
                 <div class="tab-pane active">
-                  <form class="form" novalidate="">
+                  
                     <div class="row">
                       <div class="card-body">
 							 <table class="table">
@@ -209,62 +238,43 @@ if (isset($_POST['logout'])) {
 								exit;
 								}
 								
-								 $sql = 'SELECT * FROM signupcustomer where name = "' . $_SESSION['name'] . '"';
+								 $sql = 'SELECT * FROM signupcustomer where name = "' . $_SESSION['username'] . '"';
 
 								$result = mysqli_query($con, $sql);
 								mysqli_close($con);
 								$qry = $result;								                     	
 								while ($row = mysqli_fetch_assoc($qry)) {		
-									echo '<form>';
-									echo '<div class="row">';
-									echo        '<div class="column">';
+									echo '<form action="" method="POST">';
 
-							/*		echo          '<div class="col-md-12">';  
-									echo              'Username';				       
-									echo          '</div><br><br>'; */
 
-									echo         '<div class="col-md-12">';      
-									echo              'Username';                  
-									echo         '</div><br><br>';
-
-									echo         '<div class="col-md-12">';      
-									echo              'First Name';                  
-									echo         '</div><br><br>';
+									echo          '<div class="col-md-6">';  
+									echo          ' Username<br>
+													<input type="text" name="name" size="50" value="' . $row['name'] . '"><br><br>
+													First Name <br>
+													<input type="text" name="fname" size="50" value="' . $row['fname'] . '"><br><br>
+													Last Name <br> 
+													<input type="text" name="lname" size="50" value="' . $row['lname'] . '"><br><br>
+													Email   <br>   
+													<input type="text" name="email" size="50" value="' . $row['email'] . '"><br><br>
+													Password <br>  
+													<input type="text" name="password" size="50" value="' . $row['password'] . '"><br><br>
+													Contact  <br>  
+													<input type="text" name="contact" size="50" value="' . $row['contact'] . '"><br><br>
 									
-									echo         '<div class="col-md-12">';      
-									echo              'Last Name';                  
-									echo         '</div><br><br>';
-									
-									echo         '<div class="col-md-12">';      
-									echo              'Email';                  
-									echo         '</div><br><br>';
+													<br><input type="submit" name="update" value="Submit"></input>
+									</form>
+			
+									';
 
-									echo          '<div class="col-md-12">';       
-									echo              'Password';                    
-									echo         '</div><br><br>';
-
-									echo          '<div class="col-md-12">';       
-									echo              'Contact';                    
-									echo         '</div><br><br>';
-
-									echo       '</div>';
-
-									echo          '<div class="col-md-6">';   
-									echo              $row['name']. '<br><br>'; 
-									echo 			  $row['fname']. '<br><br>'; 
-									echo 			  $row['lname']. '<br><br>'; 
-									echo 			  $row['email']. '<br><br>';
-									echo 			  $row['password']. '<br><br>'; 
-									echo 			  $row['contact']. '<br><br>';
 									echo          '</div>';
 									echo '</div>';
-									echo '</form>';
+									
 								}						
-							 ?>					 
+							 echo'			 
 						</table>
 						</div>			 
                     </div>                 
-                  </form>
+                  
 
                 </div>
               </div>
@@ -278,11 +288,9 @@ if (isset($_POST['logout'])) {
          <br>
           <a class="nav-link px-2 active" href="http://localhost/masterfolder_fm2go/homepage.html" style="color:MediumSeaGreen">
 			  <i class="fa fa-home " style="color: MediumSeaGreen"></i><span>Homepage</span></a>         
-		  <a class="nav-link px-2" href="settingprofile.php" style="color:MediumSeaGreen">
-			  <i class="fa fa-fw fa-cog mr-1" style="color: MediumSeaGreen"></i><span>Update</span></a> 
 			<br>       
 		  </div>
- 
+		
         </div>
       </div>
     </div>
@@ -293,7 +301,7 @@ if (isset($_POST['logout'])) {
 			</div>
 	</div>
 </section>
-
+';?>	
 <!-- Footer section
 ================================================== -->
 <footer>
