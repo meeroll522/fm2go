@@ -45,8 +45,8 @@ a {
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
 }
 
 a:focus {
@@ -55,7 +55,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #1b3815;
+	color: #1b3815;
 }
 
 /*---------------------------------------------*/
@@ -119,6 +119,8 @@ button {
 	outline: none !important;
 	border: none;
 	background: transparent;
+	align: center;
+	display: inline-block;
 }
 
 button:hover {
@@ -165,13 +167,10 @@ iframe {
 .container-login100 {
   width: 100%;  
   min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+   display: inline-block;
   flex-wrap: wrap;
   justify-content: center;
+
   align-items: center;
   padding: 15px;
   position: relative;
@@ -182,6 +181,7 @@ iframe {
   width: 500px;
   background: #fff;
   border-radius: 20px;
+  display: inline-block;
   overflow: hidden;
   box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
@@ -195,8 +195,10 @@ iframe {
 [ Form ]*/
 
 .login100-form {
-  width: 100%;
-  position: relative;
+	width: 100%;
+    justify-content: center;
+	display: inline-block;
+	position: relative;
 }
 
 .login100-form-title {
@@ -205,8 +207,8 @@ iframe {
   color: #fff;
   line-height: 1.2;
   text-align: center;
-
-  display: block;
+   display: inline-block;
+  justify-content: center;
   position: absolute;
   width: 100%;
   top: 0;
@@ -221,7 +223,9 @@ iframe {
 
 .wrap-input100 {
   width: 100%;
+  justify-content: center;
   background-color: #fff;
+  display: inline-block;
   border-radius: 27px;
   position: relative;
   z-index: 1;
@@ -231,8 +235,9 @@ iframe {
   font-family: Ubuntu-Bold;
   font-size: 15px;
   color: #1b3815;
+  display: inline-block;
   line-height: 1.2;
-
+  justify-content: center;
   position: relative;
   display: block;
   width: 100%;
@@ -277,21 +282,13 @@ iframe {
 [ Button ]*/
 .container-login100-form-btn {
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+ display: inline-block;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .login100-form-btn {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+   display: inline-block;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
@@ -346,7 +343,7 @@ iframe {
   color: #c80000;
   font-size: 13px;
   line-height: 1.4;
-  text-align: left;
+  text-align: center;
 
   visibility: hidden;
   opacity: 0;

@@ -18,7 +18,9 @@
 		$name = mysqli_real_escape_string($db, $_POST['name']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-
+		$salt = "codeflix";
+        $hash2 = sha1($password_1.$salt);
+		
 		// form validation: ensure that the form is correctly filled
 		if (empty($username)) { array_push($errors, "Username is required"); }
 		if (empty($email)) { array_push($errors, "Email is required"); }
@@ -30,9 +32,9 @@
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
-			$password = ($password_1);//encrypt the password before saving in the database
+			//$password = ($password_1);//encrypt the password before saving in the database
 			$query = "INSERT INTO customers (`username`, `name`, `email`, `password`, `usertype`) 
-					  VALUES('$username', '$name', '$email', '$password', 'customer')";
+					  VALUES('$username', '$name', '$email', '$hash2', 'customer')";
 			mysqli_query($db, $query);
 
 			$_SESSION['username'] = $username;
@@ -48,7 +50,9 @@
 	if (isset($_POST['login_user'])) {
 		$name = mysqli_real_escape_string($db, $_POST['name']);
 		$password = mysqli_real_escape_string($db, $_POST['password']);
-
+		$salt = "codeflix";
+        $hash2 = sha1($password.$salt);
+		
 		if (empty($name)) {
 			array_push($errors, "Username is required");
 		}
@@ -68,7 +72,7 @@
 				header('location: ../masterfolder_fm2go/homepage.html');
 			}
 			//customer login
-			$query = "SELECT * FROM `signupcustomer` WHERE name = '" .$_POST['name']. "' and password = '" .$_POST['password']. "'";
+			$query = "SELECT * FROM `signupcustomer` WHERE name = '" .$_POST['name']. "' and password = '" .$hash2. "' ";
 			$results = mysqli_query($db, $query);
 			$count =  mysqli_num_rows($results);
 			$row = mysqli_fetch_assoc($results);

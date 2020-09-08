@@ -42,7 +42,6 @@
 
 	}
 
-	// ... 
 
 	// LOGIN USER
 	if (isset($_POST['login_user'])) {
@@ -67,7 +66,9 @@
 				$_SESSION['username'] = $_POST['name'];
 				$_SESSION['password'] = $_POST['password'];
 				$_SESSION['success'] = "You are now logged in";
+
 				print_r($_SESSION);
+
 				header('location: ../homepage.html');
 
 			}

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Stock Menu</title>
+	<title>Menu | FM2GO</title>
+	<link rel="icon" href="fmICON.png" type="image/png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<html lang="en">
+
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -53,7 +56,6 @@ img {
   align-items: center;
   height: 200px;
 }
-
 </style>
 </head>
 <body>
@@ -68,15 +70,12 @@ img {
 <button class="button button1"  onclick="window.location.href='http://localhost/masterfolder_fm2go/stockmenu.html';">Update Menu</button>
 <button class="button button1"  onclick="window.location.href='http://localhost/masterfolder_fm2go/stockmenu.html';">Delete Menu</button>
 </div>
-			<br><br><a href="http://localhost/masterfolder_fm2go/admin%20homepage.php" class="txt2">
-							 Go back to Admin Homepage
-						</a><br><br>
+	<br><br><a href="http://localhost/masterfolder_fm2go/admin%20homepage.php" class="txt2">
+				 Go back to Admin Homepage
+			</a><br><br>
 <p id="demo"></p>
-			
-			
 
-	</div>
-		
+</div>
 	
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

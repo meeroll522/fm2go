@@ -4,24 +4,25 @@ if(isSet($_POST['addMenuButton']))
 	{
 	header('Location: menuInfo.php');
 	}
-else if(isSet($_POST['saveNewMenuButton']))
+if(isSet($_POST['saveNewMenuButton']))
 	{
 	addNewMenu();
 	header( "refresh:1; url=menu.php" );
 	}
-else if(isSet($_POST['deleteMenuButton']))
+if(isSet($_POST['deleteMenuButton']))
 	{
 	deleteMenu();
 	echo "<script>";
 	echo " alert('Menu Record has been deleted.');
 		</script>";
-	header( "refresh:1; url=Menu.php" );
+	header( "refresh:1; url=../menu.php" );
 	}
-else if(isSet($_POST['updateMenuButton']))
+if(isSet($_POST['updateMenuButton']))
 	{
 	updateMenuInformation();
-	header( "refresh:1; url=Menu.php" );
+	header( "refresh:1; url=../menu.php" );
 	}
+
 
 
 ?>

@@ -11,12 +11,14 @@ if(isset($_POST['signup']))
 	$password=$_POST['password'];
 	$contact=$_POST['contact'];
 	$enc_password=$password;
+	$salt = "codeflix";
+    $hash2 = sha1($password.$salt);
 	
 	$hash = md5(rand(0, 1000));
 
 	$msg=mysqli_query($con,"insert into signupcustomer 
 	(`name`,`fname`,`lname`,`email`,`password`,`contact`,`usertype`) 
-	values ('$name','$fname','$lname','$email','$enc_password','$contact','$hash')");
+	values ('$name','$fname','$lname','$email','$hash2','$contact','$hash')");
 	
 		if($msg){
 			echo "<script>console.log('test')</script>";
@@ -34,7 +36,7 @@ if(isset($_POST['signup']))
 			$headers = 'From: fm2gogroup7@gmail.com';
 			
 			mail($to, $subject, $message, $headers);
-			header("location: ../homepage.html");
+			header("location: ../login customer/login.php");
 			
 		}
 			
@@ -47,7 +49,10 @@ if(isset($_POST['login']))
 	$password=$_POST['password'];
 	$dec_password=$password;
 	$useremail=$_POST['uemail'];
-	$ret= mysqli_query($con,"SELECT * FROM `signupcustomer` WHERE email='$useremail' and password='$dec_password' and usertype='customer'");
+	$salt = "codeflix";
+    $hash2 = sha1($password.$salt);
+	
+	$ret= mysqli_query($con,"SELECT * FROM `signupcustomer` WHERE email='$useremail' and password='$hash2' and usertype='customer'");
 	$num=mysqli_fetch_array($ret);
 		if($num>0){
 			$extra="../paper-dashboard-master/examples/dashboard.html";
@@ -213,11 +218,10 @@ img {
 	<form method="post" action="login.php">
 
 		<?php include('errors.php'); ?>
-
-		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+			
+			<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
 			<input class="input100" type="text" name="name" placeholder="Enter your Username">
-		<span class="focus-input100"></span>
-			</div>
+		</div>
 			
 		<div class="form-input"><div class="wrap-input100 validate-input m-b-16" data-validate="Please enter first name">
 			<input class="input100" type="text" name="fname" placeholder="Enter your First Name">

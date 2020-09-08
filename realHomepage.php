@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Stock Menu</title>
+	<title>FM2GO HOMEPAGE</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -38,32 +38,34 @@ img {
   border: none;
   color: white;
   padding: 15px 32px;
-  text-align: center;
-  align: center;
+
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
+ 
 }
 .button1 {background-color: #4CAF50;} 
-
-
-
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
 </style>
 </head>
 <body>
-
 	<div class="container">
 	<img src="fmICON.png" class="center"/>
 	<div class="w3-container w3-myfont">
   <p class="w3-xxlarge" align ="center">Welcome to FM2GO! who are you? choose one :) </p><br>
-
 </div>
-<button class="button button1" onclick="window.location.href='http://localhost/masterfolder_fm2go/stockmenu.html';">Admin</button>
-<button class="button button1" onclick="window.location.href='http://localhost/masterfolder_fm2go/stockmenu.html';">Customer</button>
-<button class="button button1" onclick="window.location.href='http://localhost/masterfolder_fm2go/stockmenu.html';">Staff</button>
-
+</div><div class="center">
+<button class="button button1"  onclick="window.location.href='http://localhost/masterfolder_fm2go/login%20admin/';">Admin</button>
+<button class="button button1"  onclick="window.location.href='http://localhost/masterfolder_fm2go/login%20customer/login.php';">Customer</button>
+<button class="button button1" onclick="window.location.href='http://localhost/masterfolder_fm2go/staff/login.php';">Staff</button>
+	</a><br><br>
 <p id="demo"></p>
 			
 			
