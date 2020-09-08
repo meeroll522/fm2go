@@ -271,6 +271,7 @@
 <?php
 //menuInfo.php
 
+
 echo '<div id ="set" style="line-height: 1.8; align:center;" >';
 
 echo '<form action="processOrder.php" method="post">';
