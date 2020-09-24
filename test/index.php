@@ -57,11 +57,10 @@ switch($_GET["action"]) {
 <div id="shopping-cart">
 <div class="txt-heading">Shopping Cart</div>
 
-<a id="btnEmpty" href="index.php?action=empty">Empty Cart</a> &emsp;
 <!--<form style="display:inline-block" action="processBook.php" method="post" >
 <input id="btnEmpty" type="submit" name="next" value="Next"> </input>
 </form>-->
-<a id="btnEmpty" style="float: left" href="next.php">Next</a>
+
 
 <?php
 if(isset($_SESSION["cart_item"])){
@@ -72,11 +71,12 @@ if(isset($_SESSION["cart_item"])){
 <tbody>
 <tr>
 <th style="text-align:left;">Food</th>
-<th style="text-align:left;">ID</th>
+<th style="text-align:left;">Id</th>
 <th style="text-align:right;" width="5%">Quantity</th>
 <th style="text-align:right;" width="10%">Unit Price</th>
 <th style="text-align:right;" width="10%">Price</th>
 </tr>	
+
 <?php		
     foreach ($_SESSION["cart_item"] as $item){
         $item_price = $item["quantity"]*$item["price"];
@@ -102,7 +102,10 @@ if(isset($_SESSION["cart_item"])){
 <td></td>
 </tr>
 </tbody>
-</table>		
+</table>
+<a id="btnEmpty" style="float: left" href="index.php?action=empty">Empty Cart</a> &emsp;
+
+<a id="btnEmpty" style="float: right" href="next.php">Checkout</a>		<br>
   <?php
 } else {
 ?>
