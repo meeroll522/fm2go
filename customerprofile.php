@@ -304,22 +304,59 @@
 ';?>	
 <!-- Footer section
 ================================================== -->
-<footer>
-	<div class="container">
-		<div class="row">
+<!-- Footer -->
+   <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify"> All of FamilyMart Malaysia's food service and ready-to-eat selections are made with halal ingredients only. The service is currently in the midst of the halal application process with JAKIM. The products available in FamilyMart that are Halal certified will carry the Halal logo on its packaging. For products that are imported from Japan, Korea or Taiwan, the product ingredients will be vetted to ensure that no haram ingredients such as pork, lard or alcoholic substance were used.</p>
+          </div>
 
-			<div class="col-md-12 col-sm-12">
-				<p class="wow fadeInUp"  data-wow-delay="0.3s">© FamilyMart NU Central </p>
-				<ul class="social-icon wow fadeInUp"  data-wow-delay="0.6s">
-					<li><a href="https://www.facebook.com/FamilyMartMY/" class="fa fa-facebook"></a></li>
-					<li><a href="https://www.instagram.com/familymartmy/?hl=en" class="fa fa-instagram"></a></li>
-					<li><a href="https://www.linkedin.com/company/familymart-co.-ltd." class="fa fa-linkedin"></a></li>
-				</ul>
-				</div>
-			
-		</div>
-	</div>
+         <div class="col-xs-6 col-md-3">
+            <h6>Contact</h6>
+            <ul class="footer-links">
+              <li><a href="http://ql.com.my/contact-us.html">Contact us @ enquiry-familymart@ql.com.my</a></li><br>
+              <li><a href="http://career-familymart@ql.com.my/">Work for us @ career-familymart@ql.com.my</a></li><br>
+              <li><a href="http://career-familymart@ql.com.my/">Collaborate with us @ commercial-familymart@ql.com.my</a></li>
+
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
+              <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us</a></li>
+              <li><a href="https://www.familymart.com.my/our-stores.html">Sitemap</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+         <a href="#">FamilyMart</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin" ></i></a>   
+            </ul>
+          </div>
+        </div>
+      </div>
 </footer>
+
+</body>
+</html>
+
 	
 <!-- Javascript 
 ================================================== -->

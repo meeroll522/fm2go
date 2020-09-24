@@ -54,6 +54,8 @@ switch($_GET["action"]) {
 
 		</HEAD>
 <BODY>
+
+
 <div id="shopping-cart">
 <div class="txt-heading">Shopping Cart</div>
 
