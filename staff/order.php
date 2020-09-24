@@ -9,17 +9,14 @@ if(!$con)
 	exit;
 	}
  //collect data from post array
- $orderID = $_POST['visitorReference'];
- $orderName = $_POST['visitorName'];
- $orderEmail = $_POST['visitorEmail'];
- $orderContact = $_POST['visitorContact'];
- $orderDate = $_POST['visitorDate'];
- $orderQuantity = $_POST['visitorQuantity'];
- $orderPrice = $_POST['visitorTotal'];
- 
+ $orderID = $_POST['Id'];
+ $orderName = $_POST['Name'];
+ $orderQuantity = $_POST['Quantity'];
+ $orderPrice = $_POST['Price'];
+ $orderStatus = $_POST['Status'];
   
-  $sql="INSERT INTO `book`(`visitorReference`, `visitorName`, `visitorEmail`, `visitorContact`, `visitorDate`, `visitorQuantity`, `visitorTotal`) VALUES 
-  ('$orderID','$orderName','$orderEmail','$orderContact',' $orderDate','$orderQuantity','$orderPrice')";
+  $sql="INSERT INTO `order`(`Id`, `Name`, `Quantity`, `Price`, `Status`) VALUES 
+  (NULL,'$orderID','$orderName','$orderQuantity','$orderPrice','$orderStatus')";
  
 	echo $sql;
 	$qry = mysqli_query($con,$sql);
@@ -36,7 +33,7 @@ if(!$con)
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql = 'SELECT * FROM `book`';
+$sql = 'SELECT * FROM `order`';
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
@@ -53,8 +50,8 @@ if(!$con)
 
  $menuName = $_POST['menuNameToDelete'];//get selected regNumber to delete
   
-  $sql="DELETE FROM `book`
-		WHERE visitorName ='".$orderName."'";
+  $sql="DELETE FROM `order`
+		WHERE Name ='".$orderName."'";
 		
 		echo $sql;
 	$qry = mysqli_query($con,$sql);
@@ -115,7 +112,7 @@ if(!$con)
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql = "SELECT * FROM `book` where visitorName = '".$orderName."'";
+$sql = "SELECT * FROM `order` where Name = '".$orderName."'";
 
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
@@ -131,20 +128,16 @@ if(!$con)
 	exit;
 	}
 //get the data to update
- $orderID = $_POST['visitorReference'];
- $orderName = $_POST['visitorName'];
- $orderEmail = $_POST['visitorEmail'];
- $orderContact = $_POST['visitorContact'];
- $orderDate = $_POST['visitorDate'];
- $orderQuantity = $_POST['visitorQuantity'];
- $orderPrice = $_POST['visitorTotal'];
+ $orderID = $_POST['Id'];
+ $orderName = $_POST['Name'];
+ $orderQuantity = $_POST['Quantity'];
+ $orderPrice = $_POST['Price'];
+ $orderStatus = $_POST['Status'];
  
-$sql = 'update book SET visitorName ="'.$orderName.'", visitorEmail = "'.$orderEmail.'", visitorContact = "'.$orderContact.'", 
-visitorDate = "'.$orderDate.'", visitorQuantity = "'.$orderQuantity.'", visitorTotal = "'.$orderPrice.'", WHERE visitorReference = "'.$orderID.'"';
-	
+$sql = 'update order SET Name ="'.$orderName.'", Quantity = "'.$orderQuantity.'", Price = "'.$orderPrice.'", Status = "'.$orderStatus.'", WHERE Id = "'.$orderID.'"';
 	echo $sql;
-	$qry = mysqli_query($con,$sql);//run query
-	return $qry;  //return query
+$qry = mysqli_query($con,$sql);//run query
+return $qry;  //return query
 }
 /*//getAvailableCarOnTheseDate function ==================
 function getAvailableCarOnTheseDate($startDate ,$endDate)

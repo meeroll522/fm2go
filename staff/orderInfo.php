@@ -271,7 +271,6 @@
 <?php
 //menuInfo.php
 
-
 echo '<div id ="set" style="line-height: 1.8; align:center;" >';
 
 echo '<form action="processOrder.php" method="post">';
@@ -284,6 +283,8 @@ echo '<br>Order Quantity : ';
 echo '<input type="text" name="Quantity">';
 echo '<br>Order Price : ';
 echo '<input type="text" name="Price">';
+echo '<br>Order Status : ';
+echo '<input type="text" name="Status">';
 
 echo '<br><br><input type="submit" name="saveNewMenuButton" value="Save">  ';
 echo '<input type ="reset" name="resetButton" value="reset">';
