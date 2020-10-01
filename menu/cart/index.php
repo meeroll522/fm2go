@@ -48,7 +48,8 @@ switch($_GET["action"]) {
 ?>
 <HTML>
 <HEAD>
-<TITLE>Simple PHP Shopping Cart</TITLE>
+<title>Cart | FM2GO</title>
+  <link rel="icon" href="fmICON.png" type="image/png">
 <link href="style.css" type="text/css" rel="stylesheet" />
 
 <style>
@@ -126,7 +127,7 @@ if(isset($_SESSION["cart_item"])){
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
-		<div class="product-item image" style="width: 40%">
+		<div class="product-item">
 			<form method="post" action="index.php?action=add&id=<?php echo $product_array[$key]["id"]; ?>">
 			<div class="product-image"><img style="margin: 10px;" src="<?php echo $product_array[$key]["image"]; ?>"></div>
 

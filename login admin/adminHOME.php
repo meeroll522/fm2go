@@ -260,6 +260,8 @@
         <li><a href="http://localhost/masterfolder_fm2go/menu/menu.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/homepage.html">Homepage</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/menu/order/">Order</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/menu/adminStock.php">Stock</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/menu/feedback.php">Feedback</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20admin/">
           <span class="glyphicon glyphicon-log-out"></span>
         </a></li>
