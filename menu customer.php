@@ -56,6 +56,7 @@
     font-size: 95%;
 }    
  .site-footer
+
 {
   background-color:#26272b;
   padding:45px 0 20px;
@@ -224,6 +225,7 @@
 	left:10; 
 } 
 
+
 }
   body {
     font: 20px Montserrat, sans-serif;
@@ -264,7 +266,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html">FAMILY MART 2 GO</a>
+	  </div>
+	  <div id="logo">
+      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
        <ul class="nav navbar-nav navbar-right">
@@ -273,7 +277,6 @@
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/cart/"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
@@ -345,7 +348,10 @@
 </div>
 
 <!-- Footer -->
+<<<<<<< HEAD
 <br><br>
+=======
+>>>>>>> 0625c2ab1669cc03f460afaf6129595f85c27463
    <footer class="site-footer">
       <div class="container">
         <div class="row">

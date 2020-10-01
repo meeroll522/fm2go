@@ -332,18 +332,17 @@ $(document).ready(function(){
 	<div class="container-fluid bg-1 text-center">
 	<img src="fm2go-ICON.png" class="img-responsive margin" style="display:inline" alt="Bird" width="350" height="350">
 	</div>
-	
 <?php
 	include "order.php";
 
 	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
+	ini_set('display_startup_errors', 1); 
 	error_reporting(E_ALL);
 
 	$qry = getListOfMenu();
 	echo '<form action = "processOrder.php" method ="POST">';
-	//echo '<br><input type = "submit" name="addMenuButton" value ="Create New Menu" class="center-block" style="color:black">';
-
+	//echo '<br><input type = "submit" name="addMenuButton" value ="New Order" class="center-block" style="color:black">';
+	
 	echo '</form>';
 	echo '<br>';
 	echo '<div class="container-lg">
@@ -357,41 +356,36 @@ $(document).ready(function(){
 			<div class="card-body">
 			<div class="table-responsive">
             <table class="table">
-				<thead class=" text-primary" align="center">
+				<thead class=" text-primary">
 					<th>No</th>
-					<th>Reference</th>
+					<th>Id</th>
 					<th>Name</th>
-					<th>Email</th>
-					<th>Contact</th>
-					<th>Date</th>
 					<th>Quantity</th>
-					<th>Total</th>
+					<th>Price</th>
+					<th>Status</th>
+					<th>Action</th>
 				</thead>';
 	$i=1;
-	
 	while($row=mysqli_fetch_assoc($qry))//Display menu information
 	{
-		echo '<tbody align="center">';
+		echo '<tbody>';
 		echo '<tr>';
 		echo '<td>'.$i.'</td>';
-		echo '<td>'.$row['visitorReference'].'</td>';
-		echo '<td>'.$row['visitorName'].'</td>';
-		echo '<td>'.$row['visitorEmail'].'</td>';
-		echo '<td>'.$row['visitorContact'].'</td>';
-		echo '<td>'.$row['visitorDate'].'</td>';
-		echo '<td>'.$row['visitorQuantity'].'</td>';
-		echo '<td> RM'.$row['visitorTotal'].'</td>';
-		$visitorReference = $row['visitorReference'];
-		
-			/* echo '<td>';
+		echo '<td>'.$row['Id'].'</td>';
+		echo '<td>'.$row['Name'].'</td>';
+		echo '<td>'.$row['Quantity'].'</td>';
+		echo '<td>'.$row['Price'].'</td>';
+		echo '<td>'.$row['Status'].'</td>';
+		$orderId = $row['Id'];
+				echo '<td>';
 			echo '<form style="display:inline-block" action="updateOrderForm.php" method="post" >';
-			echo "<input type='hidden' value='$visitorReference' name='menuNameToUpdate'>";
+			echo "<input type='hidden' value='$orderId' name='menuNameToUpdate'>";
 			echo '<button type="submit" name="updateMenuButton" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i> </button>';
 			echo '</form>';
 			echo '<form style="display:inline-block" action="processOrder.php" method="post" >';
-			echo "<input type='hidden' value='$visitorReference' name='menuNameToDelete'>";
+			echo "<input type='hidden' value='$orderId' name='menuNameToDelete'>";
 			echo '<button type="submit" name="deleteMenuButton" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i> </button>';
-			echo '</form>'; */
+			echo '</form>';
 		echo '</td>';
 		//delete menu
 		$i++;

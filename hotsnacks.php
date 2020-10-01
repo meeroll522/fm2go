@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>FM2GO WEB</title>
+  <title>Hot Snacks | FM2GO</title>
+    <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -49,6 +50,11 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
+#logo{ 
+	position:absolute; 
+	top:0; 
+	left:10; 
+} 
   </style>
 </head>
 <body>
@@ -62,15 +68,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html">FAMILY MART 2 GO</a>
+	  </div>
+	  <div id="logo">
+      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Profile</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
+		<li> 0</li>
+		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
@@ -83,47 +93,47 @@
 
   <div class="row">
     <div class="col-sm-4">
-      <p><b>Cheese Fish Tofu</b></p> <br>
+      <p><b>Cheese Fish Tofu<br> RM 3.30 </b></p> <br>
 	  <img src="menu/menu pic/cheesefish.jpg" alt="123" width="350" height="250"> 
 
     </div>
     <div class="col-sm-4"> 
-      <p><b>Octupus Tofu</b></p> <br>
-  <img src="menu/menu pic/octupus.jpg" alt="123" width="350" height="250"> 
+      <p><b>Octupus Tofu<br> RM 3.90</b></p> <br>
+	  <img src="menu/menu pic/octupus.jpg" alt="123" width="350" height="250"> 
     </div>
 	<div class="col-sm-4"> 
-      <p><b>Thai Fish Cake</b></p> <br>
+      <p><b>Thai Fish Cake<br> RM 3.00</b></p> <br>
 	  <img src="menu/menu pic/thaifish.jpg" alt="123" width="350" height="250"> 
     </div>
   </div>
   <div class="row">
     <div class="col-sm-4">
-     <br> <p><b>Karaage Chicken</b></p> <br>
+     <br> <p><b>Karaage Chicken<br> RM 4.00</b></p> <br>
 	  <img src="menu/menu pic/karaage.jpg" alt="123" width="350" height="250"> 
 
     </div>
     <div class="col-sm-4"> 
-     <br> <p><b>Chicken Katsu</b></p> <br>
-	  <img src="menu/menu pic/chickenkatsu.jpg" alt="123" width="350" height="250"> 
+     <br> <p><b>Chicken Katsu<br> RM 5.40</b></p> <br>
+	  <img src="menu/menu pic/chickenkatsu.jpg" alt="123" width="350" height="250">
 	  
     </div>
 	<div class="col-sm-4"> 
-     <br> <p><b>Frankfurter Wurste Cheese</b></p> <br>
+     <br> <p><b>Frankfurter Wurste Cheese<br> RM 3.20</b></p> <br>
 	  <img src="menu/menu pic/sausage.jpg" alt="123" width="350" height="250"> 
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Vegge Fish Ball</b></p> <br>
-	  <img src="menu/menu pic/vegefishball.jpg" alt="123" width="350" height="250"> 
+     <br> <p><b>Vegge Fish Ball<br> RM 2.60</b></p> <br>
+	  <img src="menu/menu pic/vegefishball.jpg" alt="123" width="350" height="250">
 
       </div>
 	  <div class="col-sm-4"> 
-     <br> <p><b>Fried Fish Ball</b></p> <br>
+     <br> <p><b>Fried Fish Ball<br> RM 2.60</b></p> <br>
 	  <img src="menu/menu pic/friendfishball.jpg" alt="123" width="350" height="250"> 
 
       </div>
 	  	  <div class="col-sm-4"> 
-     <br> <p><b>White Fish Ball</b></p> <br>
+     <br> <p><b>White Fish Ball<br> RM 2.30</b></p> <br>
 	  <img src="menu/menu pic/whitefishball.jpg" alt="123" width="350" height="250"> 
 
       </div>

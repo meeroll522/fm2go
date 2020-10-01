@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +48,7 @@ if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
 	case "add":
 		if(!empty($_POST["quantity"])) {
+
 			$productByid = $db_handle->runQuery("SELECT * FROM tblproduct WHERE id='" . $_GET["id"] . "'");
 			$itemArray = array($productByid[0]["id"]=>array('name'=>$productByid[0]["name"], 'id'=>$productByid[0]["id"], 'quantity'=>$_POST["quantity"], 'price'=>$productByid[0]["price"], 'image'=>$productByid[0]["image"]));
 			
@@ -54,6 +56,10 @@ switch($_GET["action"]) {
 				if(in_array($productByid[0]["id"],array_keys($_SESSION["cart_item"]))) {
 					foreach($_SESSION["cart_item"] as $k => $v) {
 							if($productByid[0]["id"] == $k) {
+			
+			if(!empty($_SESSION["cart_item"])) {
+				if(in_array($productByid[0]["id"],array_keys($_SESSION["cart_item"]))) {
+					foreach($_SESSION["cart_item"] as $k => $v) {
 								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
 									$_SESSION["cart_item"][$k]["quantity"] = 0;
 								}
@@ -72,6 +78,7 @@ switch($_GET["action"]) {
 		if(!empty($_SESSION["cart_item"])) {
 			foreach($_SESSION["cart_item"] as $k => $v) {
 					if($_GET["id"] == $k)
+					if($_GET["id"] == $k)
 						unset($_SESSION["cart_item"][$k]);				
 					if(empty($_SESSION["cart_item"]))
 						unset($_SESSION["cart_item"]);
@@ -85,7 +92,7 @@ switch($_GET["action"]) {
 }
 ?>
 <HTML>
-<HEAD>
+
 <title>Cart | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
 <link href="style.css" type="text/css" rel="stylesheet" />
@@ -324,6 +331,16 @@ input[type=submit]:hover {
 	top:0; 
 	left:10; 
 } 
+
+<TITLE>Simple PHP Shopping Cart</TITLE>
+<link href="style.css" type="text/css" rel="stylesheet" />
+
+<style>
+	.image img {
+		width: 443px;
+		height: 150px;
+	}
+
 </style>
 
 </HEAD>
@@ -345,24 +362,41 @@ if(isset($_SESSION["cart_item"])){
 <table class="tbl-cart" cellpadding="10" cellspacing="1">
 <tbody>
 <tr>
+<<<<<<< HEAD
 <th style="txt-heading text-align:left;">Name</th>
 <th style="txt-heading text-align:left;">ID</th>
 <th style="txt-heading text-align:right;" width="5%">Quantity</th>
 <th style="txt-heading text-align:right;" width="10%">Unit Price</th>
 <th style="txt-heading text-align:right;" width="10%">Price</th>
 <th style="txt-heading text-align:center;" width="5%">Remove</th>
+
+<th style="text-align:left;">Ticket Name</th>
+<th style="text-align:left;">id</th>
+<th style="text-align:right;" width="5%">Quantity</th>
+<th style="text-align:right;" width="10%">Unit Price</th>
+<th style="text-align:right;" width="10%">Price</th>
+<th style="text-align:center;" width="5%">Remove</th>
+
 </tr>	
 <?php		
     foreach ($_SESSION["cart_item"] as $item){
         $item_price = $item["quantity"]*$item["price"];
 		?>
 				<tr>
+
 				<td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
 				<td><?php echo $item["id"]; ?></td>
 				<td style="txt-heading text-align:right;"><?php echo $item["quantity"]; ?></td>
 				<td  style="txt-heading text-align:right;"><?php echo "RM ".$item["price"]; ?></td>
 				<td  style="txt-heading text-align:right;"><?php echo "RM ". number_format($item_price,2); ?></td>
 				<td style="txt-heading text-align:center;"><a href="index.php?action=remove&id=<?php echo $item["id"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+				
+				<td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
+				<td><?php echo $item["id"]; ?></td>
+				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
+				<td  style="text-align:right;"><?php echo "RM ".$item["price"]; ?></td>
+				<td  style="text-align:right;"><?php echo "RM ". number_format($item_price,2); ?></td>
+				<td style="text-align:center;"><a href="index.php?action=remove&id=<?php echo $item["id"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
 				</tr>
 				<?php
 				$visitorQuantity += $item["quantity"];
@@ -402,6 +436,19 @@ if(isset($_SESSION["cart_item"])){
 			<div class="product-title txt-heading"><?php echo $product_array[$key]["name"]; ?></div>
 			<div class="product-price txt-heading"><?php echo "RM".$product_array[$key]["price"]; ?></div>
 			<div class="cart-action txt-heading"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+
+	$product_array = $db_handle->runQuery("SELECT * FROM ticket");
+	if (!empty($product_array)) { 
+		foreach($product_array as $key=>$value){
+	?>
+		<div class="product-item image" style="width: 40%">
+			<form method="post" action="index.php?action=add&id=<?php echo $product_array[$key]["id"]; ?>">
+			<div class="product-image"><img style="margin: 10px;" src="<?php echo $product_array[$key]["image"]; ?>"></div>
+
+			<div class="product-tile-footer">
+			<div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
+			<div class="product-price"><?php echo "RM".$product_array[$key]["price"]; ?></div>
+			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
 			</div>
 			</form>
 		</div>
@@ -410,6 +457,7 @@ if(isset($_SESSION["cart_item"])){
 	}
 	?>
 </div>
+
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>

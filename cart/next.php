@@ -458,7 +458,6 @@ if(isset($_SESSION["cart_item"])){
 </form>
 <br><br><br><br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br><br><br><br>
-
 <!-- Footer -->
 <br><br>
    <footer class="site-footer">

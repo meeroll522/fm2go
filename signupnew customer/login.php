@@ -211,7 +211,7 @@ img {
 <body>
 
 	<div class="container">
-	<img src="fmICON.png" class="center"/>
+	<img src="fm2go-ICON.png" width="250" height="250" class="center"/>
 	<div class="w3-container w3-myfont">
   <p class="w3-xxlarge" align ="center">Welcome to FM2GO ! </p><br>
 	

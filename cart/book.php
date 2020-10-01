@@ -3,6 +3,7 @@
 function addNewBook()
 {
 $con = mysqli_connect("localhost","fm2go","fm2go","fm2go");
+$con = mysqli_connect("localhost","web38","web38","zootopikadb");
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -36,7 +37,9 @@ if(!$con)
 function getListOfBook()
 {
 //create connection
+
 $con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -50,7 +53,9 @@ return $qry;  //return query
 //delete function ==================
 function deleteBook()
 {
+
 $con = mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -114,6 +119,7 @@ function getBookInformation($visitorReference)
 {
 //create connection
 $con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -128,7 +134,9 @@ return $qry;  //return query
 function updateBookInformation()
 {
 //create connection
+
 $con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 

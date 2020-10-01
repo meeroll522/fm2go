@@ -290,6 +290,7 @@ $orderID = $_POST['Id'];
 $orderName = $_POST['Name'];
 $orderQuantity = $_POST['Quantity'];
 $orderPrice = $_POST['Price'];
+$orderStatus = $_POST['Status'];
 
 echo '<div id ="set" style="line-height: 1;">';
 echo '<form action="processOrder.php" method="post">';
@@ -301,10 +302,13 @@ echo '<br>Order Name: ';
 echo "<input type='text' name='Name' value='$orderName'>";
 echo '<br>';
 echo '<br>Order Quantity : ';
-echo "<input type='number' name='Price' value='$orderQuantity'>";
+echo "<input type='number' name='Quantity' value='$orderQuantity'>";
 echo '<br>';
 echo '<br>Order Price : ';
-echo "<input type='text' name='menuQuantity' value='$orderPrice' step='0.01'>";
+echo "<input type='text' name='Price' value='$orderPrice' step='0.01'>";
+echo '<br>';
+echo '<br>Order Status : ';
+echo "<input type='text' name='Status' value='$orderStatus'>";
 echo '<br><br><input type="submit" name="updateMenuButton" value="Save">  ';
 echo '<input type ="reset" name="resetButton" value="reset">';
 

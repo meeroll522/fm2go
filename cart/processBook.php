@@ -3,7 +3,9 @@ include "book.php";
 if(isSet($_POST['updateBook']))
 	{
 		updateBookInformation();
+
 		header("refresh:1; url=../menu/orderList.php" );
+
 	}
 
 if(isSet($_POST['deleteBook']))
@@ -13,6 +15,8 @@ if(isSet($_POST['deleteBook']))
 	echo " alert('Menu record has been deleted.');
 		</script>";
 	header( "refresh:1; url=orderList.php" );
+
+
 	}
 	
 if(isSet($_POST['checkout']))
