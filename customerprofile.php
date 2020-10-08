@@ -3,7 +3,6 @@
 	
 <?php
 	session_start();
-	print_r($_SESSION);
 	if ($_SESSION['name'] != '') {
 	  session_destroy();
 	  header("Location: homepage.html");
@@ -48,6 +47,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="">
 	<meta name="description" content="">
+	
 
 	<!-- Site title
    ================================================== -->
@@ -83,13 +83,185 @@
     <style type="text/css">
     	body{
     margin-top:20px;
-    background-image: url('familymartstore.jpg')
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.5;
 }
+  .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+#logo{ 
+	position:absolute; 
+	top:0; 
+	left:10; 
+} 
+ 
     </style>
 	
 </head>
 <body>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
 
 <!-- Preloader section
 ================================================== 
@@ -102,7 +274,10 @@
 
 <!-- Navigation section
 ================================================== -->
+
+
 <div class="nav-container">
+
    <nav class="nav-inner transparent">
 
       <div class="navbar">
@@ -114,22 +289,19 @@
   				<div class="menu-container">
 					
                   <div class="circle dark inline">
-					<img src="addtocart.png" class="img-responsive">
-                  </div>
-                   <div class="circle dark inline">
-					<i class="icon ion-navicon"></i>
+					<img src="menubar.png" class="img-responsive">
                   </div>
 
+
                   <div class="list-menu">
-                    <i class="icon ion-close-round close-iframe"></i>
+                    <i class="icon ion-close-round close-iframe" src="menubar.png"></i>
                     <div class="intro-inner">
                       <ul id="nav-menu">
-                        <li><a href="../customer-page/customerprofile.php">My Account</a></li>
-                        <li><a href="">Order History</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-						<li><a href="">FAQ</a></li>
-						<li><a href="">Feedback</a></li>
+						<li><a href="http://localhost/masterfolder_fm2go/homepage.html">Homepage</a></li>
+                        <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
+                        <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
+                        <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us</a></li>
+						<li><a href="http://localhost/masterfolder_fm2go/cart/index.php?action=add&code=3DcAM78">Your Cart</a></li>
 						<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
                       </ul>
                    </div>
@@ -146,6 +318,7 @@
 	
 <!-- Portfolio section
 ================================================== -->
+
 <section id="portfolio">
    <div class="container">
       <div class="row">
@@ -166,10 +339,9 @@
 							$imgData =addslashes(file_get_contents($_FILES['image']['tmp_name']));
 							$imageProperties = getimagesize($_FILES['image']['tmp_name']);
 						
-							$sql = "UPDATE `signupcustomer` SET `imageData` = '{$imgData}', imageType = '{$imageProperties['mime']}' WHERE `signupcustomer`.`name` = '" . $_SESSION['name'] . "'";
-							//$sql = "INSERT INTO admin(imageType ,imageData) VALUES('{$imageProperties['mime']}', '{$imgData}')";
-							$current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
-							if(isset($current_id)) {
+							$sql = "UPDATE `signupcustomer` SET `imageData` = '{$imgData}', imageType = '{$imageProperties['mime']}' WHERE `signupcustomer`.`name` = '" . $_SESSION['username'] . "'";
+							$current_id = mysqli_query($conn, $sql);
+														if(isset($current_id)) {
 								
 								//mysqli_close($conn);     
 							}
@@ -183,10 +355,11 @@
 					
 					<form method="POST" action="" enctype="multipart/form-data">
                    <div class="text-center" >
-					   <?php echo '<img src="imageView.php?username='.$_SESSION['username'].'" class="avatar img-circle img-thumbnail">'; ?>
+					   <?php echo '<img src="imageView.php?username='.$_SESSION['username'].'" class="avatar img-circle img-thumbnail" >'; ?>
 						<br><br>
-				
-					<input type="file"  name="image" class="text-center center-block file-upload"> <br><br>	
+						
+						<input type="hidden" name="username" value="<?php echo $_SESSION['username']?>">
+						<input type="file"  name="image" class="text-center center-block file-upload"> <br><br>	
 					<div class="form-group">
 				     
 				       <input type='submit' name='upload' class='btn btn-primary  vertical-center' style="background-color: MediumSeaGreen; border-color: #bfbf9d">
@@ -261,7 +434,8 @@
 													Contact  <br>  
 													<input type="text" name="contact" size="50" value="' . $row['contact'] . '"><br><br>
 									
-													<br><input type="submit" name="update" value="Submit"></input>
+													<br><input type="submit" name="update" value="Change !"  style="background-color: lightblue; border-color: #bfbf9d" ></input>
+														
 									</form>
 			
 									';
@@ -283,16 +457,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-3 mb-3">
-        <div class="card mb-3">
-         <br>
-          <a class="nav-link px-2 active" href="http://localhost/masterfolder_fm2go/homepage.html" style="color:MediumSeaGreen">
-			  <i class="fa fa-home " style="color: MediumSeaGreen"></i><span>Homepage</span></a>         
-			<br>       
-		  </div>
-		
-        </div>
-      </div>
+      
     </div>
 
   </div>

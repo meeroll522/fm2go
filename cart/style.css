@@ -1,5 +1,5 @@
 body {
-	font-family: Arial;
+	font-family: Montserrat, sans-serif;
 	color: #211a1a;
 	font-size: 0.9em;
 }
@@ -27,16 +27,7 @@ body {
 	overflow: auto;
 }
 
-#btnEmpty {
-	background-color: #ffffff;
-	border: #d00000 1px solid;
-	padding: 5px 10px;
-	color: #d00000;
-	float: right;
-	text-decoration: none;
-	border-radius: 3px;
-	margin: 10px 0px;
-}
+
 
 .btnAddAction {
     padding: 5px 10px;
@@ -79,10 +70,16 @@ body {
 
 .tbl-cart {
 	font-size: 0.9em;
+
+	color: #1c100b;
+
 }
 
 .tbl-cart th {
 	font-weight: normal;
+
+	color: #1c100b;
+
 }
 
 .product-title {

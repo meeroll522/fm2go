@@ -1,9 +1,9 @@
 <?php
 class DBController {
 	private $host = "localhost";
-	private $user = "web38";
-	private $password = "web38";
-	private $database = "zootopikadb";
+	private $user = "fm2go";
+	private $password = "fm2go";
+	private $database = "fm2go";
 	private $conn;
 	
 	function __construct() {

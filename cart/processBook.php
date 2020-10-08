@@ -3,16 +3,20 @@ include "book.php";
 if(isSet($_POST['updateBook']))
 	{
 		updateBookInformation();
-		header("refresh:1; url=../ticket/ticketList.php" );
+
+		header("refresh:1; url=../menu/orderList.php" );
+
 	}
 
 if(isSet($_POST['deleteBook']))
 	{
 	deleteBook();
 	echo "<script>";
-	echo " alert('Ticket record has been deleted.');
+	echo " alert('Menu record has been deleted.');
 		</script>";
-	header( "refresh:1; url=ticketList.php" );
+	header( "refresh:1; url=orderList.php" );
+
+
 	}
 	
 if(isSet($_POST['checkout']))
@@ -21,6 +25,6 @@ if(isSet($_POST['checkout']))
 	echo "<script>";
 	echo " alert('added.');
 		</script>";
-	//header( "refresh:1; url=next.php" );
+	header( "refresh:1; url=../payment/test.php" );
 	}
 ?>

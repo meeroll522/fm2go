@@ -50,7 +50,13 @@
   .navbar-nav  li a:hover {
     color: #1abc9c !important;
   }
-  .site-footer
+  .hint-text {
+    float: left;
+    margin-top: 6px;
+    font-size: 95%;
+}    
+ .site-footer
+
 {
   background-color:#26272b;
   padding:45px 0 20px;
@@ -218,6 +224,35 @@
 	top:0; 
 	left:10; 
 } 
+
+
+}
+  body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #272e36;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #1abc9c;
+  }
+  
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  
+}
+
+	body{
+		 background-color:#fffff;
+	}
+	#set {
+	 margin:auto;
+	 width:50%;
+	 text-align:center;
+
+	 }
   </style>
 </head>
 <body>
@@ -236,14 +271,13 @@
       <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+       <ul class="nav navbar-nav navbar-right">
         <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
-		<li> 0</li>
-		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/cart/index.php?action=add&code=3DcAM78"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
@@ -315,6 +349,10 @@
 </div>
 
 <!-- Footer -->
+<<<<<<< HEAD
+<br><br>
+=======
+>>>>>>> 0625c2ab1669cc03f460afaf6129595f85c27463
    <footer class="site-footer">
       <div class="container">
         <div class="row">

@@ -431,6 +431,7 @@ table.table td i {
         <li><a href="http://localhost/masterfolder_fm2go/menu/menu.php">Menu</a></li>
         <li><a href="http://localhost/masterfolder_fm2go/login%20admin/adminHOME.php">Admin Homepage</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/menu/order/">Order</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/menu/adminStock.php">Stock</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20admin/">
           <span class="glyphicon glyphicon-log-out"></span>
         </a></li>

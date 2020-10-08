@@ -2,7 +2,7 @@
 //addNewTicket function==================
 function addNewBook()
 {
-$con = mysqli_connect("localhost","web38","web38","zootopikadb");
+$con = mysqli_connect("localhost","fm2go","fm2go","fm2go");
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -24,7 +24,7 @@ if(!$con)
  
  
  
-  $sql="INSERT INTO book(visitorReference, visitorName, visitorEmail, visitorContact, visitorDate, visitorQuantity, visitorTotal)
+  $sql="INSERT INTO `book`(`visitorReference`, `visitorName`, `visitorEmail`, `visitorContact`, `visitorDate`, `visitorQuantity`, `visitorTotal`)
 	VALUES ('$visitorReference','$visitorName','$visitorEmail','$visitorContact','$visitorDate','$visitorQuantity','$visitorTotal')";
  
   echo $sql;
@@ -36,13 +36,15 @@ if(!$con)
 function getListOfBook()
 {
 //create connection
-$con=mysqli_connect("localhost","web38","web38","zootopikadb");
+
+$con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql = 'select * from book';
+$sql = 'SELECT * FROM `book`';
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
@@ -50,7 +52,9 @@ return $qry;  //return query
 //delete function ==================
 function deleteBook()
 {
-$con = mysqli_connect("localhost","web38","web38","zootopikadb");
+
+$con = mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -113,7 +117,8 @@ return $qry;  //return query
 function getBookInformation($visitorReference)
 {
 //create connection
-$con=mysqli_connect("localhost","web38","web38","zootopikadb");
+$con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 
@@ -128,7 +133,9 @@ return $qry;  //return query
 function updateBookInformation()
 {
 //create connection
-$con=mysqli_connect("localhost","web38","web38","zootopikadb");
+
+$con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
+
 if(!$con)
 	{
 	echo  mysqli_connect_error(); 

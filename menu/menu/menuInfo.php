@@ -272,7 +272,9 @@
 </nav><br><br>
 <?php
 //menuInfo.php
-
+<body1>
+<div class="container-fluid bg-3 text-center">    
+ <h3 class="margin" style="color:#008000";><b>FEEDBACK FORM</b></h3>
 echo '<div id ="set" style="line-height: 1.8; align:center;" >';
 
 echo '<form action="processMenu.php" method="post">';
