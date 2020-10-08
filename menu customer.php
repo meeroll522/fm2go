@@ -277,6 +277,7 @@
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/cart/index.php?action=add&code=3DcAM78"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>

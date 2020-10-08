@@ -25,6 +25,6 @@ if(isSet($_POST['checkout']))
 	echo "<script>";
 	echo " alert('added.');
 		</script>";
-	//header( "refresh:1; url=next.php" );
+	header( "refresh:1; url=../payment/test.php" );
 	}
 ?>

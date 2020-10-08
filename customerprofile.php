@@ -3,7 +3,6 @@
 	
 <?php
 	session_start();
-	print_r($_SESSION);
 	if ($_SESSION['name'] != '') {
 	  session_destroy();
 	  header("Location: homepage.html");

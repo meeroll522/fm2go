@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,12 +31,11 @@
         <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
 		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/cart/index.php?action=add&code=3DcAM78"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
+		<li><a href="http://localhost/masterfolder_fm2go/test/index.php?action=add&code=3DcAM78"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
       </ul>
     </div>
   </div>
 </nav>
-
 <?php
 session_start();
 require_once("dbcontroller.php");
@@ -49,13 +47,13 @@ if(!empty($_GET["action"])) {
 switch($_GET["action"]) {
 	case "add":
 		if(!empty($_POST["quantity"])) {
-			$productBycode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
-			$itemArray = array($productBycode[0]["code"]=>array('name'=>$productBycode[0]["name"], 'id'=>$productBycode[0]["code"], 'quantity'=>$_POST["quantity"], 'price'=>$productBycode[0]["price"], 'image'=>$productBycode[0]["image"]));
+			$productByid = $db_handle->runQuery("SELECT * FROM `tblproduct` WHERE id='" . $_GET["id"] . "'");
+			$itemArray = array($productByid[0]["id"]=>array('name'=>$productByid[0]["name"], 'id'=>$productByid[0]["id"], 'quantity'=>$_POST["quantity"], 'price'=>$productByid[0]["price"], 'image'=>$productByid[0]["image"]));
 			
 			if(!empty($_SESSION["cart_item"])) {
-				if(in_array($productBycode[0]["code"],array_keys($_SESSION["cart_item"]))) {
+				if(in_array($productByid[0]["id"],array_keys($_SESSION["cart_item"]))) {
 					foreach($_SESSION["cart_item"] as $k => $v) {
-							if($productBycode[0]["code"] == $k) {
+							if($productByid[0]["id"] == $k) {
 								if(empty($_SESSION["cart_item"][$k]["quantity"])) {
 									$_SESSION["cart_item"][$k]["quantity"] = 0;
 								}
@@ -73,7 +71,7 @@ switch($_GET["action"]) {
 	case "remove":
 		if(!empty($_SESSION["cart_item"])) {
 			foreach($_SESSION["cart_item"] as $k => $v) {
-					if($_GET["code"] == $k)
+					if($_GET["id"] == $k)
 						unset($_SESSION["cart_item"][$k]);				
 					if(empty($_SESSION["cart_item"]))
 						unset($_SESSION["cart_item"]);
@@ -87,11 +85,32 @@ switch($_GET["action"]) {
 }
 ?>
 <HTML>
-
-<title>Cart | FM2GO</title>
-  <link rel="icon" href="fmICON.png" type="image/png">
+<HEAD>
+<TITLE>Simple PHP Shopping Cart</TITLE>
 <link href="style.css" type="text/css" rel="stylesheet" />
+<!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="https;//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Chelsea Market' rel='stylesheet'>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="footer, address, phone, icons" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../assets/css/tooplate-main.css">
+    <link rel="stylesheet" href="../assets/css/owl.css">
+    <link rel="stylesheet" href="../assets/css/flex-slider.css">
+	
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+</HEAD>
 <style>
 
     body1 {font: 20px Montserrat, sans-serif; line-height: 1.5;}
@@ -99,32 +118,10 @@ switch($_GET["action"]) {
 
 
 
-#btnEmpty {
-	  font-size : 18px;
-	background-color: #4CAF50;
-	border: #45a049 1px solid;
-	padding: 5px 10px;
-	color: white;
-	float: right;
-	text-decoration: none;
-	border-radius: 3px;
-	margin: 10px 0px;
-}
-
-.product-quantity {
-    padding: 0px 5px;
-    border-radius: 2px;
-    border: #E0E0E0 1px solid;
-}
-
-
-
 input[type=submit] {
   background-color: #4CAF50;
-  font-size : 18px;
   color: white;
- margin-left: 50px;
-  padding: 5px 10px;
+  padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -143,8 +140,8 @@ input[type=submit]:hover {
   
   body {
     font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;
+    line-height: 1.5;
+    color: #008000;
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
@@ -348,45 +345,29 @@ input[type=submit]:hover {
 	top:0; 
 	left:10; 
 } 
-
-<TITLE>Simple PHP Shopping Cart</TITLE>
-<link href="style.css" type="text/css" rel="stylesheet" />
-
-<style>
-	.image img {
-		width: 443px;
-		height: 150px;
-	}
-
 </style>
-
-</HEAD>
-	
-
-
+<BODY>
 <div id="shopping-cart">
-<div class="txt-heading">Shopping Cart</div><br>
+<div class="txt-heading">Shopping Cart</div>
+	<br>
 
-<!--<form style="display:inline-block" action="processBook.php" method="post" >
-<input id="btnEmpty" type="submit" name="next" value="Next"> </input>
-</form>-->
-
+<!--<a id="btnEmpty" style="float: left" href="index.php?action=empty">Next</a>-->
 
 <?php
 if(isset($_SESSION["cart_item"])){
-    $total_quantity = 0;
-    $total_price = 0;
+    $visitorQuantity = 0;
+    $visitorTotal = 0;
 ?>	
 <table class="tbl-cart" cellpadding="10" cellspacing="1">
-<body>
+<tbody>
 <tr>
-<th style="text-align:left txt-heading;">Food</th>
-<th style="text-align:left txt-heading;">ID</th>
-<th style="text-align:right txt-heading;" width="10%">Quantity</th>
-<th style="text-align:right txt-heading;" width="10%">Unit Price</th>
-<th style="text-align:right txt-heading;" width="10%">Price</th>
-</tr>	
-
+<th style="text-align:left;">Name</th>
+<th style="text-align:left;">ID</th>
+<th style="text-align:right;" width="5%">Quantity</th>
+<th style="text-align:right;" width="10%">Unit Price</th>
+<th style="text-align:right;" width="10%">Price</th>
+<th style="text-align:center;" width="10%">Remove</th>
+</tr>		
 <?php		
     foreach ($_SESSION["cart_item"] as $item){
         $item_price = $item["quantity"]*$item["price"];
@@ -394,84 +375,77 @@ if(isset($_SESSION["cart_item"])){
 				<tr>
 				<td><img src="<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
 				<td><?php echo $item["id"]; ?></td>
-				<td style="text-align:right txt-heading;"><?php echo $item["quantity"]; ?></td>
-				<td  style="text-align:right txt-heading;"><?php echo "RM ".$item["price"]; ?></td>
-				<td  style="text-align:right txt-heading;"><?php echo "RM ". number_format($item_price,2); ?></td>
-				<td style="text-align:center txt-heading;"><a href="index.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
+				<td  style="text-align:right;"><?php echo "RM ".$item["price"]; ?></td>
+				<td  style="text-align:right;"><?php echo "RM ". number_format($item_price,2); ?></td>
+				<td style="text-align:center;"><a href="index.php?action=remove&id=<?php echo $item["id"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
 				</tr>
-				
 				<?php
-				$total_quantity += $item["quantity"];
-				$total_price += ($item["price"]*$item["quantity"]);
+				$visitorQuantity += $item["quantity"];
+				$visitorTotal += ($item["price"]*$item["quantity"]);
 		}
-		
 		?>
 
 <tr>
 <td colspan="2" align="right">Total:</td>
-<td align="right"><?php echo $total_quantity; ?></td>
-<td align="right" colspan="2"><strong><?php echo "RM ".number_format($total_price, 2); ?></strong></td>
+<td align="right"><?php echo $visitorQuantity; ?></td>
+<td align="right" colspan="2"><strong><?php echo "RM ".number_format($visitorTotal, 2); ?></strong></td>
 <td></td>
 </tr>
 </tbody>
-</table>
-<a id="btnEmpty" style="float: left" href="index.php?action=empty">Empty Cart</a> &emsp;
-
-<a id="btnEmpty" style="float: right" href="pay.php">Checkout</a>		<br>
+</table>		
   <?php
 } else {
 ?>
-<div class="no-records txt-heading">Your Cart is Empty</div>
+<div class="no-records">Your Cart is Empty</div>
 <?php 
 }
 ?>
 </div>
 
-<div id="product-grid">
-	<div class="txt-heading">Products</div>
+
 	<?php
-	$product_array = $db_handle->runQuery("SELECT * FROM tblproduct");
+	$product_array = $db_handle->runQuery("SELECT * FROM `tblproduct`");
 	if (!empty($product_array)) { 
 		foreach($product_array as $key=>$value){
 	?>
-		<div class="product-item">
-			<form method="post" action="index.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-			<div class="product-image"><img src="<?php echo $product_array[$key]["image"]; ?>"></div>
 
-			<div class="product-tile-footer txt-heading">
-			<div class="product-title txt-heading"><?php echo $product_array[$key]["name"]; ?></div>
-			<div class="product-price txt-heading"><?php echo "RM".$product_array[$key]["price"]; ?></div>
-			<div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-			</div>
-			</form>
-		</div>
 	<?php
 		}
 	}
 	?>
-</div>
-</1body>
-</HTML>
+	<br><hr>
+	<nav class="text-center" style="font-family: ' Montserrat,sans-serif ''20px' 'align:center ">
+      <div class="container">
+	   <a class="center" href="#"><img style = "height: 250px" "width : 250px" "display: inline-block" src="fmICON.png" alt=""></a>
+	    <h3 class="margin" style="color:#008000";><b>PAYMENT FORM</b></h3><br>
+	 <form action="./charge.php" method="post" id="payment-form">
+	 
+      <div class="form-row">
+       <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name"><br>
+       <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name"><br>
+       <input type="email" name="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address"><br>
+       
+	   <?php
+       $payment = $visitorTotal*100;
+       echo '
+       <input type="hidden" name="amountToPay" value="'.$payment.'" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address" readonly>';
+       ?>
+        <div id="card-element" class="form-control">
+          <!-- a Stripe Element will be inserted here. -->
+        </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
+        <!-- Used to display form errors -->
+        <div id="card-errors" role="alert"></div>
+      </div><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="js/charge.js"></script><br><br>
+<br><br><br>
 
 <!-- Footer -->
 <br><br>

@@ -1,55 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>About Us | FM2GO WEB</title>
+<!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Payment | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <style>
-  body {
-    font: 20px Montserrat, sans-serif;
-    line-height: 1.8;
-    color: #f5f6f7;
-  }
-  p {font-size: 16px;}
-  .margin {margin-bottom: 45px;}
-  .bg-1 { 
-    background-color: #1abc9c; /* Green */
-    color: #ffffff;
-  }
-  .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
-    color: #ffffff;
-  }
-  .bg-3 { 
-    background-color: #ffffff; /* White */
-    color: #555555;
-  }
-  .bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
-    color: #fff;
-  }
-  .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
-  }
-  .navbar {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
-  }
-  .navbar-nav  li a:hover {
-    color: #1abc9c !important;
-  }
+   body1 {font: 20px Montserrat, sans-serif; line-height: 1.5;}
+
   .site-footer
 {
   background-color:#26272b;
@@ -218,72 +183,56 @@
 	top:0; 
 	left:10; 
 } 
-  </style>
+
+<link href="style.css" type="text/css" rel="stylesheet" />
+
+<style>
+	.image img {
+		width: 443px;
+		height: 150px;
+	}
+
+</style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-	  </div>
-	  <div id="logo">
-      <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
-        <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
-        <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
-
-		<li><a href="http://localhost/masterfolder_fm2go/cart/index.php?action=add&code=3DcAM78"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
-
-      </ul>
-    </div>
-  </div>
-</nav>
 
 <!-- First Container -->
-<div class="container-fluid bg-1 text-center">
-  <h3 class="margin">About Us</h3>
-		<img class="w3-round" src="fm2go-ICON.png" alt="Anisah" width="250" height="250""> </a>	
-</div>
-<!-- Second Container -->
-<div class="container-fluid bg-2 text-center">
-  <h3 class="margin">Family Mart</h3>
-  <p>Family Mart is the world’s 2nd largest convenience store chain, with over 17,500 stores across various markets globally. Backed with over 40 years of experience in convenience retailing. <br> Family Mart aims to constantly be ahead of social trends and diversifying social needs, ever evolving as a social and lifestyle infrastructure provider to local communities.</p>
-</div>
+<div class="container-fluid bg-1 text-center"><br><br>
+  <h3 class="margin">Food Booking Payment</h3>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<br>
 
-<!-- Third Container (Grid) -->
-<div class="container-fluid bg-3 text-center">    
+    <form action="./charge.php" method="post" id="payment-form">
+      <div class="form-row">
+       <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name">
+       <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name">
+       <input type="email" name="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address">
+       
+	   <?php
+       $payment = $visitorTotal*1200;
+       echo '
+       <input type="floatval" name="amountToPay" value="'.$payment.'" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address" readonly>';
+       ?>
+        <div id="card-element" class="form-control">
+          <!-- a Stripe Element will be inserted here. -->
+        </div>
 
-  <div class="row">
-    <div class="col-sm-4">
-      <p><b>Our Vision</b></p> <br>
-	  <p> To be the preferred global agro based enterprise. </p>
+        <!-- Used to display form errors -->
+        <div id="card-errors" role="alert"></div>
+      </div><br>
 
-    </div>
-    <div class="col-sm-4"> 
-      <p><b>Our Mission</b></p> <br>
-	  <p> We create nourishing products from agro resources, leading to benefit for all parties. </p>
-
-    </div>
-    <div class="col-sm-4"> 
-      <p><b>Our Values</b></p> <br>
-	  <p>Integrity, Win-Win, Teamwork, Innovative </p>
-
-    </div>
+      <button>Submit Payment</button>
+    </form>
   </div>
-</div>
-
-<!-- Footer -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="js/charge.js"></script><br><br>
+  <!-- Footer -->
    <footer class="site-footer">
       <div class="container">
         <div class="row">
@@ -292,9 +241,9 @@
             <p class="text-justify"> All of FamilyMart Malaysia's food service and ready-to-eat selections are made with halal ingredients only. The service is currently in the midst of the halal application process with JAKIM. The products available in FamilyMart that are Halal certified will carry the Halal logo on its packaging. For products that are imported from Japan, Korea or Taiwan, the product ingredients will be vetted to ensure that no haram ingredients such as pork, lard or alcoholic substance were used.</p>
           </div>
 
-				<div class="col-xs-6 col-md-3">
-				<h6>Contact</h6>
-				<ul class="footer-links">
+         <div class="col-xs-6 col-md-3">
+            <h6>Contact</h6>
+            <ul class="footer-links">
               <li><a href="http://ql.com.my/contact-us.html">Contact us @ enquiry-familymart@ql.com.my</a></li><br>
               <li><a href="http://career-familymart@ql.com.my/">Work for us @ career-familymart@ql.com.my</a></li><br>
               <li><a href="http://career-familymart@ql.com.my/">Collaborate with us @ commercial-familymart@ql.com.my</a></li>
@@ -321,6 +270,7 @@
             </p>
           </div>
 
+
           <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
               <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
@@ -332,6 +282,5 @@
         </div>
       </div>
 </footer>
-
 </body>
 </html>

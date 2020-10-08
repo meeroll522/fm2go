@@ -3,7 +3,6 @@
 function addNewBook()
 {
 $con = mysqli_connect("localhost","fm2go","fm2go","fm2go");
-$con = mysqli_connect("localhost","web38","web38","zootopikadb");
 if(!$con)
 	{
 	echo mysqli_connect_error();
@@ -25,7 +24,7 @@ if(!$con)
  
  
  
-  $sql="INSERT INTO book(visitorReference, visitorName, visitorEmail, visitorContact, visitorDate, visitorQuantity, visitorTotal)
+  $sql="INSERT INTO `book`(`visitorReference`, `visitorName`, `visitorEmail`, `visitorContact`, `visitorDate`, `visitorQuantity`, `visitorTotal`)
 	VALUES ('$visitorReference','$visitorName','$visitorEmail','$visitorContact','$visitorDate','$visitorQuantity','$visitorTotal')";
  
   echo $sql;
@@ -45,7 +44,7 @@ if(!$con)
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql = 'select * from book';
+$sql = 'SELECT * FROM `book`';
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
