@@ -1,4 +1,4 @@
- <title>Order | FM2GO</title>
+ <title>Create Menu | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -275,16 +275,14 @@ echo '<div id ="set" style="line-height: 1.8; align:center;" >';
 
 echo '<form action="processOrder.php" method="post">';
 echo '<fieldset><legend>Enter Menu Information :</legend>';
-echo 'Order ID : ';
-echo '<input type="text" name="Id" required>';
-echo '<br>Order Name : ';
-echo '<input type="text" name="Name" required>';
-echo '<br>Order Quantity : ';
-echo '<input type="text" name="Quantity">';
-echo '<br>Order Price : ';
-echo '<input type="text" name="Price">';
-echo '<br>Order Status : ';
-echo '<input type="text" name="Status">';
+echo 'Menu Name : ';
+echo '<input type="text" name="menuName" required>';
+echo '<br>Menu Type : ';
+echo '<input type="text" name="menuType" required>';
+echo '<br>Menu price : ';
+echo '<input type="text" name="menuPrice">';
+echo '<br>Menu Quantity : ';
+echo '<input type="text" name="menuQuantity">';
 
 echo '<br><br><input type="submit" name="saveNewMenuButton" value="Save">  ';
 echo '<input type ="reset" name="resetButton" value="reset">';

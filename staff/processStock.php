@@ -15,14 +15,11 @@ if(isSet($_POST['deleteMenuButton']))
 	echo "<script>";
 	echo " alert('Menu Record has been deleted.');
 		</script>";
-	header( "refresh:1; url=stock.php" );
+	header( "refresh:1; url=StaffStock.php" );
 	}
 if(isSet($_POST['updateMenuButton']))
 	{
 	updateMenuInformation();
-	header( "refresh:1; url=stock.php" );
+	header( "refresh:1; url=StaffStock.php" );
 	}
-
-
-
 ?>

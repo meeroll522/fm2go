@@ -13,9 +13,9 @@ if(isSet($_POST['deleteMenuButton']))
 	{
 	deleteMenu();
 	echo "<script>";
-	echo " alert('Order Record has been deleted.');
+	echo " alert('Menu Record has been deleted.');
 		</script>";
-	header( "refresh:1; url=order.php" );
+	header( "refresh:1; url=StaffOrder.php" );
 	}
 if(isSet($_POST['updateMenuButton']))
 	{

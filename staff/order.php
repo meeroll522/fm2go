@@ -9,14 +9,16 @@ if(!$con)
 	exit;
 	}
  //collect data from post array
- $orderID = $_POST['Id'];
- $orderName = $_POST['Name'];
- $orderQuantity = $_POST['Quantity'];
- $orderPrice = $_POST['Price'];
- $orderStatus = $_POST['Status'];
+ $visitorReference = $_POST['visitorReference'];
+ $visitorName = $_POST['visitorName'];
+ $visitorEmail = $_POST['visitorEmail'];
+ $visitorContact = $_POST['visitorContact'];
+ $visitorDate = $_POST['visitorDate'];
+ $visitorQuantity = $_POST['visitorQuantity'];
+ $visitorTotal = $_POST['visitorTotal'];
   
-  $sql="INSERT INTO `order`(`Id`, `Name`, `Quantity`, `Price`, `Status`) VALUES 
-  (NULL,'$orderID','$orderName','$orderQuantity','$orderPrice','$orderStatus')";
+  $sql="INSERT INTO `book`(`visitorReference`, `visitorName`, `visitorEmail`, `visitorContact`, `visitorDate`, `visitorQuantity`, `visitorTotal`) VALUES 
+  (NULL,'$visitorReference','$visitorName','$visitorEmail','$visitorContact','$visitorDate','$visitorQuantity','$visitorTotal')";
  
 	echo $sql;
 	$qry = mysqli_query($con,$sql);
@@ -33,7 +35,7 @@ if(!$con)
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql = 'SELECT * FROM `order`';
+$sql = 'SELECT * FROM `book`';
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
 }
@@ -48,62 +50,17 @@ if(!$con)
 	exit;
 	}
 
- $menuName = $_POST['menuNameToDelete'];//get selected regNumber to delete
+ $visitorReference = $_POST['menuNameToDelete'];//get selected regNumber to delete
   
-  $sql="DELETE FROM `order`
-		WHERE Name ='".$orderName."'";
+  $sql="DELETE FROM `book` WHERE visitorReference ='".$visitorReference."'";
 		
 		echo $sql;
 	$qry = mysqli_query($con,$sql);
 
 }
 
-/*//searchByRegNumber function ==================
-function findCarByRegNumber()
-{
-//create connection
-$con=mysqli_connect("localhost","web2","web2","cardb");
-if(!$con)
-	{
-	echo  mysqli_connect_error(); 
-	exit;
-	}
-$sql = 'select * from car where regNumber ="'.$_POST['searchValue'].'"';
-echo $sql;
-$qry = mysqli_query($con,$sql);//run query
-return $qry;  //return query
-}
-//findCarByBrand function ==================
-function findCarByBrand()
-{
-//create connection
-$con=mysqli_connect("localhost","web2","web2","cardb");
-if(!$con)
-	{
-	echo  mysqli_connect_error(); 
-	exit;
-	}
-$sql = "select * from car where brand like '%".$_POST['searchValue']."%'";
-echo $sql;
-$qry = mysqli_query($con,$sql);//run query
-return $qry;  //return query
-}
-function findCarByModel()
-{
-//create connection
-$con=mysqli_connect("localhost","web2","web2","cardb");
-if(!$con)
-	{
-	echo  mysqli_connect_error(); 
-	exit;
-	}
-$sql = "select * from car where model like '%".$_POST['searchValue']."%'";
-
-$qry = mysqli_query($con,$sql);//run query
-return $qry;  //return query
-}*/
 //============getMenuInformation
-function getMenuInformation($orderName)
+function getMenuInformation($visitorReference)
 {
 //create connection
 $con=mysqli_connect("localhost","fm2go","fm2go","fm2go");
@@ -112,7 +69,7 @@ if(!$con)
 	echo  mysqli_connect_error(); 
 	exit;
 	}
-$sql = "SELECT * FROM `order` where Name = '".$orderName."'";
+$sql = "SELECT * FROM `book` where visitorReference = '".$visitorReference."'";
 
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query
@@ -128,13 +85,17 @@ if(!$con)
 	exit;
 	}
 //get the data to update
- $orderID = $_POST['Id'];
- $orderName = $_POST['Name'];
- $orderQuantity = $_POST['Quantity'];
- $orderPrice = $_POST['Price'];
- $orderStatus = $_POST['Status'];
+ $visitorReference = $_POST['visitorReference'];
+ $visitorName = $_POST['visitorName'];
+ $visitorEmail = $_POST['visitorEmail'];
+ $visitorContact = $_POST['visitorContact'];
+ $visitorDate = $_POST['visitorDate'];
+ $visitorQuantity = $_POST['visitorQuantity'];
+ $visitorTotal = $_POST['visitorTotal'];
  
-$sql = 'update order SET Name ="'.$orderName.'", Quantity = "'.$orderQuantity.'", Price = "'.$orderPrice.'", Status = "'.$orderStatus.'", WHERE Id = "'.$orderID.'"';
+$sql = 'update book SET visitorName ="'.$visitorName.'", visitorEmail = "'.$visitorEmail.'", visitorContact = "'.$visitorContact.'" 
+		, visitorDate = "'.$visitorDate.'", visitorQuantity = "'.$visitorQuantity.'", visitorTotal = "'.$visitorTotal.'"
+		WHERE visitorReference = "'.$visitorReference.'"';
 	echo $sql;
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query

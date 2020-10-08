@@ -277,10 +277,13 @@ echo '<form action="processStock.php" method="post">';
 echo '<fieldset><legend>Enter Menu Information :</legend>';
 echo 'Menu Name : ';
 echo '<input type="text" name="menuName" required>';
+echo '<br>';
 echo '<br>Menu Type : ';
 echo '<input type="text" name="menuType" required>';
+echo '<br>';
 echo '<br>Menu price : ';
 echo '<input type="text" name="menuPrice">';
+echo '<br>';
 echo '<br>Menu Quantity : ';
 echo '<input type="text" name="menuQuantity">';
 

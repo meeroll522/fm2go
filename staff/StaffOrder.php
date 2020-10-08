@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Order</title>
+<title>Stock</title>
 <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -331,6 +331,7 @@ $(document).ready(function(){
 
 	<div class="container-fluid bg-1 text-center">
 	<img src="fm2go-ICON.png" class="img-responsive margin" style="display:inline" alt="Bird" width="350" height="350">
+	<h3>FAMILY MART NU SENTRAL</h3>
 	</div>
 <?php
 	include "order.php";
@@ -341,7 +342,7 @@ $(document).ready(function(){
 
 	$qry = getListOfMenu();
 	echo '<form action = "processOrder.php" method ="POST">';
-	//echo '<br><input type = "submit" name="addMenuButton" value ="New Order" class="center-block" style="color:black">';
+	//echo '<br><input type = "submit" name="addMenuButton" value ="Create New Menu" class="center-block" style="color:black">';
 	
 	echo '</form>';
 	echo '<br>';
@@ -358,11 +359,13 @@ $(document).ready(function(){
             <table class="table">
 				<thead class=" text-primary">
 					<th>No</th>
-					<th>Id</th>
-					<th>Name</th>
-					<th>Quantity</th>
-					<th>Price</th>
-					<th>Status</th>
+					<th>visitorReference</th>
+					<th>visitorName</th>
+					<th>visitorEmail</th>
+					<th>visitorContact</th>
+					<th>visitorDate</th>
+					<th>visitorQuantity</th>
+					<th>visitorTotal</th>
 					<th>Action</th>
 				</thead>';
 	$i=1;
@@ -371,33 +374,36 @@ $(document).ready(function(){
 		echo '<tbody>';
 		echo '<tr>';
 		echo '<td>'.$i.'</td>';
-		echo '<td>'.$row['Id'].'</td>';
-		echo '<td>'.$row['Name'].'</td>';
-		echo '<td>'.$row['Quantity'].'</td>';
-		echo '<td>'.$row['Price'].'</td>';
-		echo '<td>'.$row['Status'].'</td>';
-		$orderId = $row['Id'];
-				echo '<td>';
-			echo '<form style="display:inline-block" action="updateOrderForm.php" method="post" >';
-			echo "<input type='hidden' value='$orderId' name='menuNameToUpdate'>";
+		echo '<td>'.$row['visitorReference'].'</td>';
+		echo '<td>'.$row['visitorName'].'</td>';
+		echo '<td>'.$row['visitorEmail'].'</td>';
+		echo '<td>'.$row['visitorContact'].'</td>';
+		echo '<td>'.$row['visitorDate'].'</td>';
+		echo '<td>'.$row['visitorQuantity'].'</td>';
+		echo '<td>'.$row['visitorTotal'].'</td>';
+		$visitorReference = $row['visitorReference'];
+			echo '<td>';
+/* 			echo '<form style="display:inline-block" action="updateOrderForm.php" method="post" >';
+			echo "<input type='hidden' value='$visitorReference' name='menuNameToUpdate'>";
 			echo '<button type="submit" name="updateMenuButton" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i> </button>';
-			echo '</form>';
+			echo '</form>'; */
 			echo '<form style="display:inline-block" action="processOrder.php" method="post" >';
-			echo "<input type='hidden' value='$orderId' name='menuNameToDelete'>";
+			echo "<input type='hidden' value='$visitorReference' name='menuNameToDelete'>";
 			echo '<button type="submit" name="deleteMenuButton" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i> </button>';
 			echo '</form>';
 		echo '</td>';
 		//delete menu
 		$i++;
 	}
-		echo'</tr>
+	echo'</tr>
         </tbody>
         </table>
         </div>
         </div>
         </div>
         </div>';
-?></div>
+?>
+</div>
 	
 <!-- Footer -->
 <footer class="site-footer">

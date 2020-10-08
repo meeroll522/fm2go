@@ -133,7 +133,8 @@ if(!$con)
  $menuPrice = $_POST['menuPrice'];
  $menuQuantity = $_POST['menuQuantity'];
  
-$sql = 'update menu SET menuName ="'.$menuName.'", menuType = "'.$menuType.'", menuPrice = "'.$menuQuantity.'" WHERE menuName = "'.$menuName.'"';
+$sql = 'update menu SET menuName ="'.$menuName.'", menuType = "'.$menuType.'", menuPrice = "'.$menuPrice.'", menuQuantity = "'.$menuQuantity.'" 
+WHERE menuName = "'.$menuName.'"';
 	echo $sql;
 $qry = mysqli_query($con,$sql);//run query
 return $qry;  //return query

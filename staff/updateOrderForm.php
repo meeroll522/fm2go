@@ -1,4 +1,4 @@
-   <title>Update Order | FM2GO</title>
+   <title>Update Menu | FM2GO</title>
   <link rel="icon" href="fmICON.png" type="image/png">
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -275,40 +275,49 @@ ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
-include "StaffOrder.php";	
+include "order.php";	
 	
 $con = mysqli_connect('localhost','fm2go','fm2go','fm2go') or die('Unable To connect');
 
 
 //updateMenuForm.php
 
-$menuName=$_POST['menuNameToUpdate'];
-$qry = getMenuInformation($orderName);//call function to get detail menu data
+$visitorReference=$_POST['menuNameToUpdate'];
+$qry = getMenuInformation($visitorReference);//call function to get detail menu data
 $row = mysqli_fetch_assoc($qry);
 //assign data to variable
-$orderID = $_POST['Id'];
-$orderName = $_POST['Name'];
-$orderQuantity = $_POST['Quantity'];
-$orderPrice = $_POST['Price'];
-$orderStatus = $_POST['Status'];
+ //$visitorReference = $_POST['visitorReference'];
+ $visitorName = $_POST['visitorName'];
+ $visitorEmail = $_POST['visitorEmail'];
+ $visitorContact = $_POST['visitorContact'];
+ $visitorDate = $_POST['visitorDate'];
+ $visitorQuantity = $_POST['visitorQuantity'];
+ $visitorTotal = $_POST['visitorTotal'];
 
 echo '<div id ="set" style="line-height: 1;">';
 echo '<form action="processOrder.php" method="post">';
-echo '<fieldset><legend>Order Information Update:</legend>';
-echo 'Order Id: ';
-echo "<input type='text' name='Id' value='$orderID' >";
+echo '<fieldset><legend>Menu Information Update:</legend>';
+echo 'visitorReference: ';
+echo "<input type='text' name='visitorReference' value='$visitorReference' >";
 echo '<br>';
-echo '<br>Order Name: ';
-echo "<input type='text' name='Name' value='$orderName'>";
+echo '<br>visitorName : ';
+echo "<input type='text' name='visitorName' value='$visitorName'>";
 echo '<br>';
-echo '<br>Order Quantity : ';
-echo "<input type='number' name='Quantity' value='$orderQuantity'>";
+echo '<br>visitorEmail : ';
+echo "<input type='text' name='visitorEmail' value='$visitorEmail'>";
 echo '<br>';
-echo '<br>Order Price : ';
-echo "<input type='text' name='Price' value='$orderPrice' step='0.01'>";
+echo '<br>visitorContact : ';
+echo "<input type='text' name='visitorContact' value='$visitorContact'>";
 echo '<br>';
-echo '<br>Order Status : ';
-echo "<input type='text' name='Status' value='$orderStatus'>";
+echo '<br>visitorDate : ';
+echo "<input type='text' name='visitorDate' value='$visitorDate'>";
+echo '<br>';
+echo '<br>visitorQuantity : ';
+echo "<input type='text' name='visitorQuantity' value='$visitorQuantity'>";
+echo '<br>';
+echo '<br>visitorTotal : ';
+echo "<input type='number' name='visitorTotal' value='$visitorTotal' step='0.01'>";
+
 echo '<br><br><input type="submit" name="updateMenuButton" value="Save">  ';
 echo '<input type ="reset" name="resetButton" value="reset">';
 
