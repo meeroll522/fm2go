@@ -235,7 +235,7 @@ iframe {
 
   position: relative;
   display: block;
-  width: 50%;
+  width: 100%;
   height: 55px;
   background: #ebebeb;
   border-radius: 27px;
@@ -276,7 +276,7 @@ iframe {
 /*------------------------------------------------------------------
 [ Button ]*/
 .container-login100-form-btn {
-  width: 50%;
+  width: 100%;
   margin: center;
   display: -webkit-box;
   display: -webkit-flex;

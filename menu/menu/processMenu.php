@@ -7,7 +7,7 @@ if(isSet($_POST['addMenuButton']))
 if(isSet($_POST['saveNewMenuButton']))
 	{
 	addNewMenu();
-	header( "refresh:1; url=menu.php" );
+	header( "refresh:1; url=../menu.php" );
 	}
 if(isSet($_POST['deleteMenuButton']))
 	{

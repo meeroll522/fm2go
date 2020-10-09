@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,14 +26,6 @@
       <a class="navbar-brand" href="http://localhost/masterfolder_fm2go/homepage.html"><img src ="FM2GO.png" width="180" height="50" ></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://localhost/masterfolder_fm2go/menu%20customer.php">Menu</a></li>
-        <li><a href="http://localhost/masterfolder_fm2go/about.html">About Us</a></li>
-        <li><a href="http://localhost/masterfolder_fm2go/contact.html">Contact Us </a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/customerprofile.php">Profile</a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/login%20customer/login.php">Logout</a></li>
-		<li><a href="http://localhost/masterfolder_fm2go/test/index.php?action=add&code=3DcAM78"><img src="cart.png" class="img-responsive" width="30" height="40" ></a></li>
-      </ul>
     </div>
   </div>
 </nav>
@@ -366,7 +359,6 @@ if(isset($_SESSION["cart_item"])){
 <th style="text-align:right;" width="5%">Quantity</th>
 <th style="text-align:right;" width="10%">Unit Price</th>
 <th style="text-align:right;" width="10%">Price</th>
-<th style="text-align:center;" width="10%">Remove</th>
 </tr>		
 <?php		
     foreach ($_SESSION["cart_item"] as $item){
@@ -378,7 +370,7 @@ if(isset($_SESSION["cart_item"])){
 				<td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
 				<td  style="text-align:right;"><?php echo "RM ".$item["price"]; ?></td>
 				<td  style="text-align:right;"><?php echo "RM ". number_format($item_price,2); ?></td>
-				<td style="text-align:center;"><a href="index.php?action=remove&id=<?php echo $item["id"]; ?>" class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+				
 				</tr>
 				<?php
 				$visitorQuantity += $item["quantity"];
@@ -422,10 +414,14 @@ if(isset($_SESSION["cart_item"])){
 	 <form action="./charge.php" method="post" id="payment-form">
 	 
       <div class="form-row">
-       <input type="text" name="first_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="First Name"><br>
-       <input type="text" name="last_name" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Last Name"><br>
+       <input type="text" name="visitorName" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Full Name"><br>
+       <input type="text" name="visitorContact" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Contact Number"><br>
        <input type="email" name="email" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Email Address"><br>
-       
+       <input type="date" name="visitorDate" class="form-control mb-3 StripeElement StripeElement--empty" placeholder="Date"><br>
+	   <?php 
+			echo '<input type="hidden" value="'.$visitorQuantity.'" name="visitorQuantity">'; 
+			echo '<input type="hidden" value="'.$visitorTotal.'" name="visitorTotal">';
+		?>
 	   <?php
        $payment = $visitorTotal*100;
        echo '
@@ -445,7 +441,7 @@ if(isset($_SESSION["cart_item"])){
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
   <script src="js/charge.js"></script><br><br>
-<br><br><br>
+<br><br><br><br><br><br><br><br><br><br>
 
 <!-- Footer -->
 <br><br>

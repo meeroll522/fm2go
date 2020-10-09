@@ -420,7 +420,7 @@ $(document).ready(function(){
 	echo '<div class="col-md-12">
 			<div class="card">
 			<div class="card-header row">
-				<h4 class="card-title col-md-9"> Menu Booked By Customer</h4>
+
 			</div>
 			<div class="card-body">
 			<div class="table-responsive">
@@ -434,7 +434,6 @@ $(document).ready(function(){
 					<th>Date</th>
 					<th>Quantity</th>
 					<th>Total</th>
-					<th>Actions</th>
 				</thead>';
 	$i=1;
 	while($row=mysqli_fetch_assoc($qry))//Display car information
@@ -450,17 +449,7 @@ $(document).ready(function(){
 		echo '<td>'.$row['visitorQuantity'].'</td>';
 		echo '<td> RM'.$row['visitorTotal'].'</td>';
 		$visitorReference = $row['visitorReference'];
-		echo '<td>';
-			echo '<form style="display:inline-block" action="../cart/updateBook.php" method="post" >';
-			echo "<input type='hidden' value='$visitorReference' name='visitorReferenceToUpdate'>";
-			echo '<button type="submit" name="updateBook" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i> </button>';
-			echo '</form>';
-			echo '&emsp;';
-			echo '<form style="display:inline-block" action="../cart/processBook.php" method="post" >';
-			echo "<input type='hidden' value='$visitorReference' name='visitorReferenceToDelete'>";
-			echo '<button type="submit" name="deleteBook" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i> </button>';
-			echo '</form>';
-		echo '</td>';
+	
 		$i++;
 	}
 		echo'</tr>
