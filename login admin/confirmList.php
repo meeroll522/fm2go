@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -370,7 +371,7 @@ table.table td i {
 	 }
   </style>
   <script>
-$(document).ready(function(){
+	$(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 });
 </script>
@@ -413,6 +414,7 @@ $(document).ready(function(){
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
+
 
 	$qry = getListOfConfirm();
 
@@ -459,6 +461,53 @@ $(document).ready(function(){
 	?>
 <!-- Third Container (Grid) -->
 <div class="container-fluid bg-3 text-center">    
+<?php
+include "order.php";	
+	
+$con = mysqli_connect('localhost','fm2go','fm2go','fm2go') or die('Unable To connect');
+
+
+//updateMenuForm.php
+
+$visitorReference=$_POST['menuNameToUpdate'];
+$qry = getMenuInformation($visitorReference);//call function to get detail menu data
+$row = mysqli_fetch_assoc($qry);
+//assign data to variable
+ $visitorReference = $_POST['visitorReference'];
+ $visitorName = $_POST['visitorName'];
+ $visitorEmail = $_POST['visitorEmail'];
+ $visitorContact = $_POST['visitorContact'];
+ $visitorDate = $_POST['visitorDate'];
+ $visitorQuantity = $_POST['visitorQuantity'];
+ $visitorTotal = $_POST['visitorTotal'];
+
+echo '<div id ="set" style="line-height: 1;">';
+echo '<form action="processOrder.php" method="post">';
+echo '<fieldset><legend>Menu Information Update:</legend>';
+echo 'visitorReference: ';
+echo "<input type='text' name='visitorReference' value='$visitorReference' >";
+echo '<br>';
+echo '<br>visitorName : ';
+echo "<input type='text' name='visitorName' value='$visitorName'>";
+echo '<br>';
+echo '<br>visitorEmail : ';
+echo "<input type='text' name='visitorEmail' value='$visitorEmail'>";
+echo '<br>';
+echo '<br>visitorContact : ';
+echo "<input type='text' name='visitorContact' value='$visitorContact'>";
+echo '<br>';
+echo '<br>visitorDate : ';
+echo "<input type='text' name='visitorDate' value='$visitorDate'>";
+echo '<br>';
+echo '<br>visitorQuantity : ';
+echo "<input type='text' name='visitorQuantity' value='$visitorQuantity'>";
+echo '<br>';
+echo '<br>visitorTotal : ';
+echo "<input type='number' name='visitorTotal' value='$visitorTotal' step='0.01'>";
+
+echo '<br><br><input type="submit" name="updateMenuButton" value="Save">  ';
+echo '<input type ="reset" name="resetButton" value="reset">';
+?>
 
   <div class="row">
     <div class="col-sm-4">

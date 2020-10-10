@@ -275,7 +275,7 @@ ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 
-include "StaffStock.php";	
+include "stock.php";	
 	
 $con = mysqli_connect('localhost','fm2go','fm2go','fm2go') or die('Unable To connect');
 
@@ -292,7 +292,7 @@ $menuPrice =$row['menuPrice'];
 $menuQuantity = $row['menuQuantity'];
 
 echo '<div id ="set" style="line-height: 1;">';
-echo '<form action="processMenu.php" method="post">';
+echo '<form action="processStock.php" method="post">';
 echo '<fieldset><legend>Menu Information Update:</legend>';
 echo 'Menu Name: ';
 echo "<input type='text' name='menuName' value='$menuName' >";

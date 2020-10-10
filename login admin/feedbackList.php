@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 
   <!-- Theme Made By www.w3schools.com - No Copyright -->
   <title>Feedback Details | FM2GO</title>
+
   <link rel="icon" href="fmICON.png" type="image/png">
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -410,9 +412,22 @@ $(document).ready(function(){
     <?php
 	include "feedback.php";
 
+
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
+
+echo '<form action="processFeedback.php" method="post">';
+echo '<fieldset><legend>Enter Menu Information :</legend>';
+echo 'Menu Name : ';
+echo '<input type="text" name="menuName" required>';
+echo '<br>Menu Type : ';
+echo '<input type="text" name="menuType" required>';
+echo '<br>Menu price : ';
+echo '<input type="text" name="menuPrice">';
+echo '<br>Menu Quantity : ';
+echo '<input type="text" name="menuQuantity">';
+
 
 	$qry = getListOfFeedback();
 
